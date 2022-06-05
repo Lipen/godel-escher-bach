@@ -4,6 +4,9 @@ _*
 *.pdf
 *.txt
 test.tex
+/img/orig/
+/img/edit/
+/img/psd/
 
 ## TeX
 # Core latex/pdflatex auxiliary files:
