@@ -1,0 +1,180 @@
+\documentclass[a4paper,12pt,oneside,openany]{memoir}
+\usepackage{sty/preamble}
+
+\newlength{\alphabet}
+\settowidth{\alphabet}{\normalfont abcdefghijklmnopqrstuvwxyz}
+
+%% Page setup
+\usepackage{geometry}
+\geometry{
+    % margin=2cm,
+    vmargin=2cm,
+    hmargin=3cm,
+    % hmargin=1in,
+    % textwidth=2.3\alphabet,
+    includehead,
+    % includefoot,
+    heightrounded,
+    % showframe,
+    % pass,
+}
+\pagestyle{fancy}
+\fancyfoot{}
+\fancyfoot[R]{\thepage}
+
+\setcounter{tocdepth}{2}
+\setcounter{secnumdepth}{1}
+
+\setlength{\parindent}{2pc}
+
+%% Frame around the text area
+% \usepackage{showframe}
+% \renewcommand\ShowFrameLinethickness{0.1pt}
+% \renewcommand*\ShowFrameColor{\color{lightgray}}
+
+% \usepackage{indentfirst}
+% \usepackage{tocbibind}
+\usepackage{verse}
+\usepackage{paracol}
+\usepackage{xlop}
+
+\let\providelength\undefined
+\let\providecounter\undefined
+\usepackage{moredefs}
+
+
+\title{ГЁДЕЛЬ, ЭШЕР, БАХ: \\ эта бесконечная гирлянда}
+\author{Дуглас Ричард Хофштадтер}
+
+
+\begin{document}
+
+\frontmatter
+
+\maketitle
+
+\mainmatter
+
+% Праздничное предисловие автора к русскому изданию книги «Гёдель, Эшер Бах»
+\subfile{parts/preface}
+
+\begingroup
+\hypersetup{hidelinks}
+\clearpage
+% \begin{KeepFromToc}
+\tableofcontents
+% \end{KeepFromToc}
+\clearpage
+\endgroup
+
+% Обзор
+\subfile{parts/overview}
+% Список иллюстраций
+\subfile{parts/illustrations}
+% Благодарность
+\subfile{parts/acknowledgment}
+
+\part{ЧАСТЬ~I}
+
+% TODO: illustration 1
+% \emph{Рис. I. Иоганн Себастиан Бах в 1748. С портрета кисти Элиаса Готтлиба Хауссманна.}
+
+% Интродукция: музыко-логическое приношение
+\subfile{parts/introduction}
+% Трехголосная инвенция
+\subfile{parts/dial01}
+% Глава 1. Головоломка MU
+\subfile{parts/ch01}
+% Двухголосная инвенция
+\subfile{parts/dial02}
+% Глава 2. Содержание и форма в математике
+\subfile{parts/ch02}
+% Соната для Ахилла соло
+\subfile{parts/dial03}
+% Глава 3. Рисунок и фон
+\subfile{parts/ch03}
+% Акростиконтрапунктус
+\subfile{parts/dial04}
+% Глава 4. Непротиворечивость, полнота и геометрия
+\subfile{parts/ch04}
+% Маленький гармонический лабиринт
+\subfile{parts/dial05}
+% Глава 5. Рекурсивные структуры и процессы
+\subfile{parts/ch05}
+% Канон с интервальным увеличением
+\subfile{parts/dial06}
+% Глава 6. Местонахождение значения
+\subfile{parts/ch06}
+% Хроматическая фантазия и фига
+\subfile{parts/dial07}
+% Глава 7. Исчисление Высказываний
+\subfile{parts/ch07}
+% Крабий канон
+\subfile{parts/dial08}
+% Глава 8. Типографская теория чисел
+\subfile{parts/ch08}
+% Приношение «МУ»
+\subfile{parts/dial09}
+% Глава 9. Мумон и Гёдель
+% \subfile{parts/ch09}
+% %
+% \subfile{parts/dial10}
+% %
+% \subfile{parts/dial11}
+% %
+% \subfile{parts/dial12}
+% %
+% \subfile{parts/dial13}
+% %
+% \subfile{parts/dial14}
+
+% \include{fragments/xx08}
+% \subsubsection{Трехголосная инвенция}
+% \include{fragments/xx09}
+% % \subsubsection{ГЛАВА I: Головоломк MU}
+% \include{fragments/xx10}
+% % \subsubsection{\texorpdfstring{\emph{Двухголосная инвенция} }{Двухголосная инвенци }}
+% \include{fragments/xx11}
+% % \subsubsection{ГЛАВА II: Содержание и форма  математике}
+% \include{fragments/xx12}
+% % \subsubsection{Соната для Ахилла соло}
+% \include{fragments/xx13}
+% % \subsubsection{ГЛАВА III: Рисунок и фон}
+% \include{fragments/xx14}
+% % \subsubsection{Акростиконтрапунктус}
+% \include{fragments/xx15}
+% % \subsubsection{ГЛАВА IV: Непротиворечивость, полнота  геометрия}
+% \include{fragments/xx16}
+% % \subsubsection{Маленький гармонический лабиринт}
+% \include{fragments/xx17}
+% % \subsubsection{ГЛАВА V: Рекурсивные структуры  процессы}
+% \include{fragments/xx18}
+% % \subsubsection{Канон с интервальны увеличением}
+% \include{fragments/xx19}
+% % \subsubsection{ГЛАВА VI: Местонахождени значения}
+% \include{fragments/xx20}
+% % \subsubsection{Хроматическая фантазия и фига}
+% \include{fragments/xx21}
+% % \subsubsection{ГЛАВА VII: Исчислени Высказываний}
+% \include{fragments/xx22}
+% % \subsubsection{Крабий канон}
+% \include{fragments/xx23}
+% % \subsubsection{ГЛАВА VIII: Типографская теория чисел}
+% \include{fragments/xx24}
+% % \subsubsection[Приношение «МУ»]{\texorpdfstring{Приношение «МУ»\footnote{Все коаны в этом Диалоге подлинны, они взят из следующих двух книг Paul Reps «Zen Flesh Zen Bones» и Gyomay M. Kubose «Zen Koans»}}{Приношение «МУ»}}
+% \include{fragments/xx25}
+% \subsubsection{ГЛАВА IX: Мумон и Гёдель}
+% \include{fragments/xx26}
+
+\part{Часть~II}
+
+\emph{Триплеты «GEB» и «EGB»}
+
+% \subsubsection{Прелюдия и\ldots{}}
+% \include{fragments/xx28}
+% \subsubsection{ГЛАВА X: Уровни описания и компьютерны системы}
+% \include{fragments/xx29}
+
+
+
+\end{document}

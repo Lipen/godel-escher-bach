@@ -1,0 +1,455 @@
+% %% Extend path for input files
+% \def\input@path{{../}}%
+
+
+%%% [Language]
+
+%% English-only setup
+% \usepackage{T1}
+% \usepackage[utf8]{inputenc}
+
+%% With Russian
+% \usepackage{cmap}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+
+%% Fix mapping for ligatures
+% https://tex.stackexchange.com/a/450394
+\input glyphtounicode
+\pdfgentounicode=1
+
+
+%%% [Math packages]
+% Note: load this before font packages
+\usepackage{amsmath}
+\usepackage{mathtools}
+% \usepackage{amssymb}
+% See docs:
+%  https://ctan.org/pkg/amsmath
+%  https://ctan.org/pkg/mathtools
+%%%-----
+
+
+%%% [Font setup]
+% \usepackage{lmodern}
+%  (or)
+\usepackage[tt=false]{libertine}
+\usepackage{libertinegc}
+\usepackage[varqu,varl]{inconsolata} % typewriter
+% \usepackage[scaled=.95]{cabin} % sans serif like Gill Sans
+\usepackage[libertine,smallerops]{newtxmath}
+%  (or)
+% \usepackage[scaled=.98,space]{erewhon}
+% \usepackage[varqu,varl]{inconsolata} % typewriter
+% \usepackage[scaled=.95]{cabin} % sans serif like Gill Sans
+% \usepackage[utopia,smallerops]{newtxmath}
+% %% \usepackage[type1,scaled=.95]{cabin} % sans serif like Gill Sans
+% %% \usepackage[utopia,vvarbb,smallerops]{newtxmath}
+
+
+%%% [Microtypography]
+\usepackage[
+    babel=true,% Enable language-specific kerning
+    expansion=alltext,
+    protrusion=alltext-nott,
+    final,% Always enable microtype, even if in draft mode.
+]{microtype}
+
+
+%%% [Common packages]
+\usepackage{graphicx}
+\usepackage{etoolbox}
+\usepackage{setspace}
+\usepackage{scalerel}
+\usepackage{xspace}
+\usepackage{xifthen}
+\usepackage{bm}
+\usepackage{url}
+\usepackage[normalem]{ulem}
+\usepackage[usenames]{xcolor}
+\usepackage[autostyle]{csquotes}
+\usepackage{ragged2e}
+\usepackage[Export]{adjustbox}
+\usepackage[shortcuts]{extdash}
+\usepackage{fancyhdr}
+\usepackage[user,lastpage]{zref}
+\usepackage{float}
+\usepackage{newfloat}
+\usepackage{wrapfig}
+\usepackage{caption}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{makecell}
+\usepackage{longtable}
+\usepackage{witharrows}
+\usepackage{nicematrix}
+\usepackage{shapepar}
+\usepackage{ellipsis}
+\usepackage{environ}
+\usepackage{lipsum}
+
+
+%%% [Setup]
+
+%% New random seed every build
+\usepackage{pgf}
+\pgfmathsetseed{\number\pdfrandomseed}
+
+%% Setup path to images
+\graphicspath{{img/}}
+
+%% Improve wrapping of URLs: https://tex.stackexchange.com/a/10419
+\g@addto@macro{\UrlBreaks}{\UrlOrds}
+
+%% Custom style for \thead
+\renewcommand\theadfont{\bfseries\normalsize}
+\renewcommand\theadset{\def\arraystretch{.8}}
+
+
+%%% [Subfiles]
+\usepackage{subfiles}
+% See docs: https://ctan.org/pkg/subfiles
+
+% \newcommand{\onlyinsubfile}[1]{#1}
+% \newcommand{\notinsubfile}[1]{}
+%% Note: place the following lines after \begin{document} !!!
+%%%% \renewcommand{\onlyinsubfile}[1]{}
+%%%% \renewcommand{\notinsubfile}[1]{#1}
+
+
+%%% [Arrays for math]
+\usepackage{array}
+% See docs: https://ctan.org/pkg/array
+% TODO: setup new columns
+
+
+%%% [Lists (enumerate, itemize)]
+\usepackage{enumitem}
+% See docs: https://ctan.org/pkg/enumitem
+% TODO: setup custom lists
+
+
+%%% [TikZ]
+\usepackage{tikz}
+% See docs: https://www.ctan.org/pkg/pgf
+
+%% Template for "tikz-something.tex":
+%    \documentclass[../main.tex]{subfiles}%
+%    \enabletikzpreview%
+%    \begin{document}%
+%    \begin{tikzpicture}[...]
+%      ...
+%    \end{tikzpicture}%
+%    \end{document}
+
+%% TikZ libraries
+\usetikzlibrary{
+    arrows.meta,
+    automata,
+    backgrounds,
+    calc,
+    fit,
+    positioning,
+    svg.path,
+    trees,
+    decorations.pathreplacing,
+}
+
+%% Common TikZ setup
+\tikzset{
+    % every text node part/.style={align=center},
+}
+
+\makeatletter
+\newcommand{\onlyinpreamble}[1]{% {<text>}
+    \ifx\@onlypreamble\@notprerr% after \begin{document}
+    \else% before \begin{document}
+        #1%
+    \fi}
+\makeatother
+
+\newcommand{\enabletikzpreview}[1][2pt]{% [<border>]
+    \onlyinpreamble{%
+        \usepackage[active,tightpage]{preview}
+        \PreviewBorder=#1
+        \PreviewEnvironment{tikzpicture}
+    }}
+
+
+%%% [tcolorbox]
+\usepackage{tcolorbox}
+\tcbuselibrary{skins,breakable}
+
+%%% [Some stuff]
+%% Check the package is loaded. Can be used inside \begin{documen}
+\usepackage{ltxcmds}
+\newcommand*{\IfPackageLoaded}{\ltx@ifpackageloaded}
+
+
+%%% [Add your packages below]
+% \usepackage{HERE-GOES-YOUR-PACKAGE}
+
+
+%%% [^^^ Add your packages above ^^^]
+
+
+%%% [Back-reference from footnote]
+\usepackage{footnotebackref}
+% https://tex.stackexchange.com/a/78438
+\makeatletter
+\LetLtxMacro{\BHFN@Old@footnotemark}{\@footnotemark}
+\renewcommand*{\@footnotemark}{%
+    \refstepcounter{BackrefHyperFootnoteCounter}%
+    \xdef\BackrefFootnoteTag{bhfn:\theBackrefHyperFootnoteCounter}%
+    \label{\BackrefFootnoteTag}%
+    \BHFN@Old@footnotemark
+}
+\makeatother
+
+
+%%% [Bookmarks]
+% Note: load `bookmark` before `hyperref`
+% Note: use [numbered] option to obtain numbered sections
+\usepackage[numbered]{bookmark}
+
+
+%%% [Hyperlinks]
+%% Setup hyperref
+\usepackage{hyperref}
+\hypersetup{
+    breaklinks=true,% allow links to break over lines
+    pdfstartview=,% empty value leads to using viewer's defaults
+    % hidelinks,
+    allcolors=black,
+    urlcolor=blue,
+    linkcolor=red,
+    colorlinks=true,
+}
+
+%% Enable correct jumping to figures when referencing
+\usepackage[all]{hypcap}
+
+
+%%% [Smart references]
+% Note: load `cleveref` last
+\usepackage[capitalize,nameinlink]{cleveref}
+% See docs: https://ctan.org/pkg/cleveref
+
+%% Setup cleveref
+% \crefname{section}{Sect.}{Sect.}
+% \Crefname{section}{Section}{Sections}
+% \crefname{appsection}{App.}{App.}
+% \Crefname{appsection}{Appendix}{Appendices}
+
+
+%%% [Setup typography]
+
+%% Force TeX not to break in math mode (9999 = almost never)
+\relpenalty=9999
+\binoppenalty=5000
+
+%% Forbid widows/orphans
+% Note: \clubpenalty is for orphans
+% Note: widow = single line on next page
+% Note: orphan (club) = single line on previous page
+% \widowpenalty=10000
+% \clubpenalty=10000
+% \widowpenalties=4 10000 10000 150 0
+% \clubpenalties=4 10000 10000 150 0
+\widowpenalties=4 9999 9000 150 0
+\clubpenalties=4 9999 9000 150 0
+
+%% Lines penalty
+% Default \linepenalty=10
+% \linepenalty=100
+
+%% Hyphenation penalty
+% Default \hyphenpenalty=10
+% Default \tolerance=200
+\hyphenpenalty=50
+% \tolerance=200
+
+%% Emergency stretch
+\emergencystretch=1em
+
+%% Space to intext float
+% \setlength\intextsep{4pt plus 6pt}
+
+%% Space between text and arbitrary float
+% \setlength\textfloatsep{6pt plus 4pt}
+
+%% Hyphenation
+\hyphenation{
+    сокра-ще-ниях
+    испол-не-ние
+}
+
+
+%%% [Extra stuff]
+
+%% Common dialogue
+\newlist{dialogue}{itemize}{1}
+\setlist[dialogue]{
+    topsep=0pt,
+    itemsep=0pt plus .5ex,
+    parsep=\parskip,
+    left=0pt..2pc,
+    align=left,
+    label={},
+    labelsep=4pt,
+    itemindent=!,
+    before=\SetupDialogue,
+}
+\newcommand{\SetupDialogue}{%
+    \newcommand*{\speak}[1]{% {<name>}
+        \item[\textit{##1}:]
+    }
+    % \newcommand*{\direct}[1]{% {<text>}
+    %     \par\vspace{4pt}
+    %     \begingroup
+    %     \parshape=1
+    %         2pc \dimexpr\textwidth-4pc\relax
+    %     ##1
+    %     \par\vspace{4pt}
+    %     \endgroup
+    % }
+    \newcommand*{\direct}[1]{% {<text>}
+        \vspace{4pt plus 4pt}
+        \begin{adjustwidth}{}{2pc}
+            ##1
+        \end{adjustwidth}
+        \vspace{4pt plus 4pt}
+    }
+    \newcommand{\EmptyItem}{%
+        \item[]\hspace{-\itemindent}
+    }
+}
+
+%% Some custom list (used in: dial02)
+\newlist{statements}{itemize}{1}
+\setlist[statements]{%
+    noitemsep,
+    topsep=2pt,
+    align=left,
+    label={},
+    labelindent=\parindent,
+    labelwidth=2pc,
+    labelsep=0pt,
+    itemindent=0pt,
+    leftmargin=!,
+}
+
+%% Block environment
+\newenvironment{block}{%
+    \par
+    \vspace{6pt}
+    \everypar={\parshape=2
+        0pt \linewidth
+        \parindent \dimexpr\linewidth-\parindent\relax
+    }
+}{%
+    \par\vspace{6pt}
+}
+
+\newcommand*{\centerblock}[1]{% {<text>}
+    \vspace{4pt}
+    \begin{adjustwidth}{4pc}{4pc}
+        \centering
+        #1
+    \end{adjustwidth}
+    \vspace{4pt}
+}
+
+%% Nested dialogue with levels (dial05)
+\newenvironment{Dialogue}{%
+    %% Indent for paragraphs (leftmargin for 2+ lines)
+    \providelength{\myindent}
+    \setlength{\myindent}{2pc}
+    % \setlength{\myindent}{1cm}
+
+    \setlength{\parindent}{\myindent}
+
+    %% Indent for levels
+    \providelength{\mywidth}
+    \setlength{\mywidth}{4pc}
+    % \setlength{\mywidth}{2cm}
+
+    %% Level counter
+    \providecounter{level}
+    \setcounter{level}{0}
+
+    \defcommand*{\speak}[1]{% {<name>}
+        \par%
+        % \leavevmode% (it is better to explicitly use \noindent)
+        \noindent%
+        % First line: left=level*mywidth, right=0
+        % Next lines: left=level*mywidth+myindent, right=0
+        \parshape=2
+            \dimexpr\value{level}\mywidth\relax
+            \dimexpr\linewidth-\value{level}\mywidth\relax
+            \dimexpr\value{level}\mywidth+\myindent\relax
+            \dimexpr\linewidth-\value{level}\mywidth-\myindent\relax
+        \strut\textit{##1:}\hspace{5pt}\ignorespaces
+    }
+
+    \defcommand*{\direct}[1]{% {<text>}
+        \par%
+        \vspace{4pt plus 4pt}
+        % \leavevmode% (it is better to explicitly use \noindent)
+        \noindent%
+        % All lines: left=level*mywidth+myindent, right=myindent
+        \parshape=1
+            % Note: subtract \myindent twice in the second expr (width),
+            %  in order to make right=\myindent
+            \dimexpr\value{level}\mywidth+\myindent\relax
+            \dimexpr\linewidth-\value{level}\mywidth-\myindent-\myindent\relax
+        {##1\par}
+        \vspace{4pt plus 4pt}
+    }
+
+    \newenvironment{directblock}{%
+        \par%
+        \vspace{4pt plus 4pt}
+        \begin{adjustwidth}{\dimexpr\value{level}\mywidth+\myindent\relax}{\myindent}
+        \setlength{\parindent}{0pt}
+    }{%
+        \end{adjustwidth}
+        \vspace{4pt plus 4pt}
+    }
+
+    \newenvironment{sublevel}{%
+        \par%
+        \addtocounter{level}{1}
+    }{%
+        \par%
+        \addtocounter{level}{-1}
+    }
+
+    \newenvironment{customlevel}[1]{% {<level>}
+        \providecounter{level*}% Saved value of 'level'
+        \setcounter{level*}{\value{level}}
+        \setcounter{level}{##1}
+    }{%
+        \setcounter{level}{\value{level*}}
+    }
+
+    % \begin{tcolorbox}[breakable]
+    % \IfPackageLoaded{fgruler}{%
+    %     \noindent\ruler{rightup}{10cm}
+    % }{}
+
+    \abnormalparskip{0pt plus .5ex}
+
+    %% Common paragraph: left=level*width, right=0
+    \everypar{%
+        % (\arabic{level})%
+        \parshape=1
+            \dimexpr\value{level}\mywidth\relax
+            \dimexpr\linewidth-\value{level}\mywidth\relax
+    }
+}{%
+    % \end{tcolorbox}
+    \par%
+}
