@@ -3,6 +3,7 @@ trash
 _*
 *.pdf
 *.txt
+test.tex
 
 ## TeX
 # Core latex/pdflatex auxiliary files:
