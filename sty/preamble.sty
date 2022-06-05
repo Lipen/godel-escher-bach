@@ -306,15 +306,6 @@
     \newcommand*{\speak}[1]{% {<name>}
         \item[\textit{##1}:]
     }
-    % \newcommand*{\direct}[1]{% {<text>}
-    %     \par\vspace{4pt}
-    %     \begingroup
-    %     \parshape=1
-    %         2pc \dimexpr\textwidth-4pc\relax
-    %     ##1
-    %     \par\vspace{4pt}
-    %     \endgroup
-    % }
     \newcommand*{\direct}[1]{% {<text>}
         \vspace{4pt plus 4pt}
         \begin{adjustwidth}{}{2pc}
@@ -360,6 +351,17 @@
         #1
     \end{adjustwidth}
     \vspace{4pt}
+}
+
+%% tcolorbox for defs,rules,axioms,etc
+\newtcolorbox{mybox}[2][]{% [<style>]{<title>}
+    boxrule=0.4mm,
+    enlarge top initially by=2pt,
+    enlarge bottom finally by=2pt,
+    colback=black!3,
+    colbacktitle=black!50,
+    title=#2,
+    #1,
 }
 
 %% Nested dialogue with levels (dial05)
