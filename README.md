@@ -1,8 +1,18 @@
-# $\TeX$ification of "Gödel, Escher, Bach"
+# TeXification of "Gödel, Escher, Bach"
 
 > This repository contains a $\TeX$ reproduction of the Russian translation\* of the book "Gödel, Escher, Bach: An Eternal Golden Braid" by [Douglas Hofstadter](https://en.wikipedia.org/wiki/Douglas_Hofstadter).
 
 \* Д.Р. Хофштадтер "Гёдель, Эшер, Бах: эта бесконечная гирлянда".
+
+### Build
+
+[Render online](https://texlive2020.latexonline.cc/compile?git=https://github.com/Lipen/godel-escher-bach&target=main.tex&command=pdflatex)
+
+Make it yourself:
+
+```sh
+latexmk -pdflatex main
+```
 
 ### Work in progress
 
