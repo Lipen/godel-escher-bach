@@ -1,46 +1,15 @@
 \documentclass[a4paper,12pt,oneside,openany]{memoir}
 \usepackage{sty/preamble}
 
-\newlength{\alphabet}
-\settowidth{\alphabet}{\normalfont abcdefghijklmnopqrstuvwxyz}
-
-%% Page setup
-\usepackage{geometry}
-\geometry{
-    % margin=2cm,
-    vmargin=2cm,
-    hmargin=3cm,
-    % hmargin=1in,
-    % textwidth=2.3\alphabet,
-    includehead,
-    % includefoot,
-    heightrounded,
-    % showframe,
-    % pass,
-}
-\pagestyle{fancy}
-\fancyfoot{}
-\fancyfoot[R]{\thepage}
-
-\setcounter{tocdepth}{1}
-\setcounter{secnumdepth}{1}
-
-\setlength{\parindent}{2pc}
-
 %% Frame around the text area
 % \usepackage{showframe}
 % \renewcommand\ShowFrameLinethickness{0.1pt}
 % \renewcommand*\ShowFrameColor{\color{lightgray}}
 
-% \usepackage{indentfirst}
-% \usepackage{tocbibind}
-\usepackage{verse}
-\usepackage{paracol}
-\usepackage{xlop}
+\setlength{\parindent}{2pc}
 
-\let\providelength\undefined
-\let\providecounter\undefined
-\usepackage{moredefs}
+\setcounter{tocdepth}{1}
+\setcounter{secnumdepth}{1}
 
 
 \title{ГЁДЕЛЬ, ЭШЕР, БАХ: \\ эта бесконечная гирлянда}
