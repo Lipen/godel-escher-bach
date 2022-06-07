@@ -280,6 +280,12 @@
 
 %%% [Setup typography]
 %
+%% Paragraph indent
+\setlength{\parindent}{2pc}
+%
+%% Rubber \parskip
+\abnormalparskip{0pt plus .5ex}
+%
 %% Emergency stretch
 \emergencystretch=1em
 %
@@ -437,8 +443,6 @@
         \setcounter{level}{\value{level*}}
     }
 
-    %% Rubber \parskip
-    \abnormalparskip{0pt plus .5ex}
     %% Common paragraph: left=level*width, right=0
     \everypar{%
         % (\arabic{level})%
