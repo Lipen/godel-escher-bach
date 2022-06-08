@@ -23,7 +23,7 @@
 \mainmatter
 
 % Праздничное предисловие автора к русскому изданию книги «Гёдель, Эшер Бах»
-\subfile{parts/preface}
+\subfileinclude{parts/preface}
 
 \begingroup
 \hypersetup{hidelinks}
@@ -35,11 +35,11 @@
 \endgroup
 
 % Обзор
-\subfile{parts/overview}
+\subfileinclude{parts/overview}
 % Список иллюстраций
-\subfile{parts/illustrations}
+\subfileinclude{parts/illustrations}
 % Благодарность
-\subfile{parts/acknowledgment}
+\subfileinclude{parts/acknowledgment}
 
 \part{ЧАСТЬ~I}
 
@@ -47,43 +47,52 @@
 % \emph{Рис. I. Иоганн Себастиан Бах в 1748. С портрета кисти Элиаса Готтлиба Хауссманна.}
 
 % Интродукция: музыко-логическое приношение
-\subfile{parts/introduction}
+\subfileinclude{parts/introduction}
+%
 % Трехголосная инвенция
-\clearpage\subfile{parts/dial01}
-% Глава 1. Головоломка MU
-\subfile{parts/ch01}
+\subfileinclude{parts/dial01}
+% Глава I: Головоломка MU
+\subfileinclude{parts/ch01}
+%
 % Двухголосная инвенция
-\clearpage\subfile{parts/dial02}
-% Глава 2. Содержание и форма в математике
-\subfile{parts/ch02}
+\subfileinclude{parts/dial02}
+% Глава II: Содержание и форма в математике
+\subfileinclude{parts/ch02}
+%
 % Соната для Ахилла соло
-\clearpage\subfile{parts/dial03}
-% Глава 3. Рисунок и фон
-\subfile{parts/ch03}
+\subfileinclude{parts/dial03}
+% Глава III: Рисунок и фон
+\subfileinclude{parts/ch03}
+%
 % Акростиконтрапунктус
-\clearpage\subfile{parts/dial04}
-% Глава 4. Непротиворечивость, полнота и геометрия
-\subfile{parts/ch04}
+\subfileinclude{parts/dial04}
+% Глава IV: Непротиворечивость, полнота и геометрия
+\subfileinclude{parts/ch04}
+%
 % Маленький гармонический лабиринт
-\clearpage\subfile{parts/dial05}
-% Глава 5. Рекурсивные структуры и процессы
-\subfile{parts/ch05}
+\subfileinclude{parts/dial05}
+% Глава V: Рекурсивные структуры и процессы
+\subfileinclude{parts/ch05}
+%
 % Канон с интервальным увеличением
-\clearpage\subfile{parts/dial06}
-% Глава 6. Местонахождение значения
-\subfile{parts/ch06}
+\subfileinclude{parts/dial06}
+% Глава VI: Местонахождение значения
+\subfileinclude{parts/ch06}
+%
 % Хроматическая фантазия и фига
-\clearpage\subfile{parts/dial07}
-% Глава 7. Исчисление Высказываний
-\subfile{parts/ch07}
+\subfileinclude{parts/dial07}
+% Глава VII: Исчисление Высказываний
+\subfileinclude{parts/ch07}
+%
 % Крабий канон
-\clearpage\subfile{parts/dial08}
-% Глава 8. Типографская теория чисел
-\subfile{parts/ch08}
+\subfileinclude{parts/dial08}
+% Глава VIII: Типографская теория чисел
+\subfileinclude{parts/ch08}
+%
 % Приношение «МУ»
-\clearpage\subfile{parts/dial09}
-% Глава 9. Мумон и Гёдель
-\subfile{parts/ch09}
+\subfileinclude{parts/dial09}
+% Глава IX: Мумон и Гёдель
+\subfileinclude{parts/ch09}
 
 \part{Часть~II}
 
@@ -91,10 +100,61 @@
 % \emph{Триплеты «GEB» и «EGB»}
 
 % Прелюдия и...
-\clearpage\subfile{parts/dial10}
-% Глава 10. Уровни описания и компьютерные системы
-\subfile{parts/ch10}
+\subfileinclude{parts/dial10}
+% Глава X: Уровни описания и компьютерные системы
+\subfileinclude{parts/ch10}
+%
 % ...и Муравьиная фуга
-% \clearpage\subfile{parts/dial11}
+\subfileinclude{parts/dial11}
+% Глава XI: Мозг и мысль
+\subfileinclude{parts/ch11}
+%
+% Англо-франко-германо-русская сюита
+\subfileinclude{parts/dial12}
+% Глава XII: Разум и мысль
+\subfileinclude{parts/ch12}
+%
+% Ария с разнообразными вариациями
+\subfileinclude{parts/dial13}
+% Глава XIII: Блуп, Флуп и Глуп
+\subfileinclude{parts/ch13}
+%
+% Ария в ключе G
+\subfileinclude{parts/dial14}
+% Глава XIV: О формально неразрешимых суждениях ТТЧ и родственных систем
+\subfileinclude{parts/ch14}
+%
+% Праздничная Кантататата...
+\subfileinclude{parts/dial15}
+% Глава XV: Прыжок из системы
+\subfileinclude{parts/ch15}
+%
+% Благочестивые размышления курильщика табака
+\subfileinclude{parts/dial16}
+% Глава XVI: Авто-реф и авто-реп
+\subfileinclude{parts/ch16}
+%
+% Магнификраб в пирожоре
+\subfileinclude{parts/dial17}
+% Глава XVII: Чёрч, Тюринг, Тарский и другие
+\subfileinclude{parts/ch17}
+%
+% ШРДЛУ
+\subfileinclude{parts/dial18}
+% Глава XVIII: Искусственный интеллект: взгляд в прошлое
+\subfileinclude{parts/ch18}
+%
+% Контрафактус
+\subfileinclude{parts/dial19}
+% Глава XIX: Искусственный Интеллект: виды на будущее
+\subfileinclude{parts/ch19}
+%
+% Канон Ленивца
+\subfileinclude{parts/dial20}
+% Глава XX: Странные Петли или Запутанные Иерархии
+\subfileinclude{parts/ch20}
+%
+% Шестиголосый Ричеркар
+\subfileinclude{parts/dial21}
 
 \end{document}
