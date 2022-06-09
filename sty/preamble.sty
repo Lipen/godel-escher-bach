@@ -231,25 +231,14 @@
 %%% [^^^ Add your packages above ^^^]
 
 
-%%% [Back-reference from footnote]
-\usepackage{footnotebackref}
-% https://tex.stackexchange.com/a/78438
-\LetLtxMacro{\BHFN@Old@footnotemark}{\@footnotemark}
-\renewcommand*{\@footnotemark}{%
-    \refstepcounter{BackrefHyperFootnoteCounter}%
-    \xdef\BackrefFootnoteTag{bhfn:\theBackrefHyperFootnoteCounter}%
-    \label{\BackrefFootnoteTag}%
-    \BHFN@Old@footnotemark
-}
-
-
 %%% [Bookmarks]
 % Note: load `bookmark` before `hyperref`
 % Note: use [numbered] option to obtain numbered sections
-\usepackage[numbered]{bookmark}
+\usepackage{bookmark}
 
 
 %%% [Hyperlinks]
+%
 %% Setup hyperref
 \usepackage{hyperref}
 \hypersetup{
@@ -263,8 +252,20 @@
 }
 %
 %% Enable correct jumping to figures when referencing
-\usepackage[all]{hypcap}
-
+% \usepackage[all]{hypcap}
+%
+%% Back-reference from footnote
+% \usepackage[numberlinked]{footnotebackref}
+% %
+% %% Fix '\footnotemark' macro for 'footnotebackref'
+% % https://tex.stackexchange.com/a/78438
+% \LetLtxMacro{\BHFN@Old@footnotemark}{\@footnotemark}
+% \renewcommand*{\@footnotemark}{%
+%     \refstepcounter{BackrefHyperFootnoteCounter}%
+%     \xdef\BackrefFootnoteTag{bhfn:\theBackrefHyperFootnoteCounter}%
+%     \label{\BackrefFootnoteTag}%
+%     \BHFN@Old@footnotemark
+% }
 
 %%% [Smart references]
 % Note: load `cleveref` last
