@@ -100,6 +100,7 @@
 \usepackage{verse}
 \usepackage{paracol}
 \usepackage{xlop}
+\usepackage{calc}
 
 
 %%% [Page setup]
@@ -129,8 +130,51 @@
 \fancyfoot{}
 \fancyfoot[R]{\thepage}
 %
+%% TOC depth
+\settocdepth{section}
+%
+%% Sections numbering
+\setsecnumdepth{chapter}
+%
+%% Custom chapter style
+\makechapterstyle{MyChapterStyle}{
+    \renewcommand{\thechapter}{\Roman{chapter}}
+    \setlength{\beforechapskip}{0pt}
+    \setlength{\midchapskip}{20pt}
+    \setlength{\afterchapskip}{20pt}
+    \renewcommand*\chapnamefont{\Large\lsstyle\centering\MakeUppercase}
+    \renewcommand*\chapnumfont{\chapnamefont}
+    % \renewcommand*\printchaptername[1]{%
+    %     \chapnamefont\MakeUppercase{\@chapapp}
+    % }
+    \renewcommand*\chaptitlefont{\huge\bfseries\centering}
+    \renewcommand*\printchaptertitle[1]{%
+        \setlength\tabcolsep{1pc}% used as indentation on both sides
+        \settowidth\@tempdimc{\chaptitlefont ##1}%
+        \setlength\@tempdimc{\textwidth-\@tempdimc-2\tabcolsep}%
+        \chaptitlefont
+        \ifdim\@tempdimc > 0pt\relax% one line
+            \begin{tabular}{c}
+        \else% two+ lines
+            \begin{tabular}{%
+                >{\chaptitlefont\arraybackslash}p{0.8\textwidth-2\tabcolsep}
+            }
+        \fi
+            \toprule
+            ##1 \\
+            \bottomrule
+        \end{tabular}
+    }
+}
+%% Chapters style
+\chapterstyle{MyChapterStyle}
+%% Sections style
+\setsecheadstyle{\Large\bfseries\itshape\centering}
+%% Subsection style
+\setsubsecheadstyle{\large\bfseries\centering}
+%
 %% Titles
-\usepackage[compact]{titlesec}
+% \usepackage[compact]{titlesec}
 % \titleformat{\section}{\large\bfseries}{\thesection}{1em}{}
 % \titleformat{\subsection}{\large}{\thesubsection}{.6em}{\flatcaps}
 % \titleformat{\subsubsection}{}{\thesubsubsection}{.6em}{}{\itshape}

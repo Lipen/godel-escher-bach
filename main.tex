@@ -6,9 +6,6 @@
 % \renewcommand\ShowFrameLinethickness{0.1pt}
 % \renewcommand*\ShowFrameColor{\color{lightgray}}
 
-\setcounter{tocdepth}{1}
-\setcounter{secnumdepth}{1}
-
 
 \title{ГЁДЕЛЬ, ЭШЕР, БАХ: \\ эта бесконечная гирлянда}
 \author{Дуглас Ричард Хофштадтер}
@@ -20,17 +17,13 @@
 
 \maketitle
 
-\mainmatter
-
-% Праздничное предисловие автора к русскому изданию книги «Гёдель, Эшер Бах»
+% Предисловие
 \subfileinclude{parts/preface}
 
 \begingroup
 \hypersetup{hidelinks}
 \clearpage
-% \begin{KeepFromToc}
 \tableofcontents
-% \end{KeepFromToc}
 \clearpage
 \endgroup
 
@@ -40,6 +33,8 @@
 \subfileinclude{parts/illustrations}
 % Благодарность
 \subfileinclude{parts/acknowledgment}
+
+\mainmatter
 
 \part{ГЭБ}
 
@@ -150,5 +145,12 @@
 %
 % Шестиголосый Ричеркар
 \subfileinclude{parts/dial21}
+
+% %% Pull bookmarks out of the "part"
+% \bookmarksetup{startatroot}
+%
+% \chapter{Notes}
+% \chapter{Bibliography}
+% \chapter{Sources}
 
 \end{document}
