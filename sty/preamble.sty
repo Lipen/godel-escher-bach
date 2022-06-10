@@ -136,7 +136,7 @@
 %% Sections numbering
 \setsecnumdepth{chapter}
 %
-%% Custom chapter style
+%% Chapter style for \mainmatter
 \makechapterstyle{MyChapterStyle}{
     \renewcommand{\thechapter}{\Roman{chapter}}
     \setlength{\beforechapskip}{0pt}
@@ -144,9 +144,6 @@
     \setlength{\afterchapskip}{20pt}
     \renewcommand*\chapnamefont{\Large\lsstyle\centering\MakeUppercase}
     \renewcommand*\chapnumfont{\chapnamefont}
-    % \renewcommand*\printchaptername[1]{%
-    %     \chapnamefont\MakeUppercase{\@chapapp}
-    % }
     \renewcommand*\chaptitlefont{\huge\bfseries\centering}
     \renewcommand*\printchaptertitle[1]{%
         \setlength\tabcolsep{1pc}% used as indentation on both sides
@@ -166,6 +163,17 @@
         \end{tabular}
     }
 }
+%
+%% Chapter style for \frontmatter
+\makechapterstyle{FrontMatterChapterStyle}{%
+    \chapterstyle{MyChapterStyle}
+    \renewcommand*{\chapterheadstart}{}
+    \renewcommand*{\printchaptername}{}
+    \renewcommand*{\printchapternum}{}
+    \renewcommand*{\afterchapternum}{}
+    \renewcommand*{\chaptitlefont}{\huge\centering}
+}
+%
 %% Chapters style
 \chapterstyle{MyChapterStyle}
 %% Sections style
