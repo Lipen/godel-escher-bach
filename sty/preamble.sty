@@ -119,75 +119,6 @@
     % showframe,
     % pass,
 }
-%
-% %% Fancy page style
-% \usepackage{fancyhdr}
-% \pagestyle{fancy}
-% \fancyfoot{}
-% \fancyfoot[R]{\thepage}
-%
-%% TOC depth
-\settocdepth{section}
-\maxtocdepth{section}
-%
-%% Sections numbering
-\setsecnumdepth{chapter}
-\maxsecnumdepth{chapter}
-%
-%% Chapter style for \mainmatter
-\makechapterstyle{MyChapterStyle}{
-    \renewcommand{\thechapter}{\Roman{chapter}}
-    \setlength{\beforechapskip}{0pt}
-    \setlength{\midchapskip}{20pt}
-    \setlength{\afterchapskip}{20pt}
-    \renewcommand*\chapnamefont{\Large\lsstyle\centering\MakeUppercase}
-    \renewcommand*\chapnumfont{\chapnamefont}
-    \renewcommand*\chaptitlefont{\huge\bfseries\centering}
-    \renewcommand*\printchaptertitle[1]{%
-        \setlength\tabcolsep{1pc}% used as indentation on both sides
-        \settowidth\@tempdimc{\chaptitlefont ##1}%
-        \setlength\@tempdimc{\textwidth-\@tempdimc-2\tabcolsep}%
-        \chaptitlefont
-        \ifdim\@tempdimc > 0pt\relax% one line
-            \begin{tabular}{c}
-        \else% two+ lines
-            \begin{tabular}{%
-                >{\chaptitlefont\arraybackslash}p{\textwidth-4pc-2\tabcolsep}
-            }
-        \fi
-            \toprule
-            ##1 \\
-            \bottomrule
-        \end{tabular}
-    }
-}
-%
-%% Chapter style for \frontmatter
-\makechapterstyle{FrontMatterChapterStyle}{%
-    \chapterstyle{MyChapterStyle}
-    \renewcommand*{\chapterheadstart}{}
-    \renewcommand*{\printchaptername}{}
-    \renewcommand*{\printchapternum}{}
-    \renewcommand*{\afterchapternum}{}
-    \renewcommand*{\chaptitlefont}{\huge\centering}
-}
-%
-%% Chapters style
-\chapterstyle{MyChapterStyle}
-%% Sections style
-\setsecheadstyle{\Large\bfseries\itshape\centering}
-%% Subsection style
-\setsubsecheadstyle{\large\bfseries\centering}
-%
-%% Titles
-% \usepackage[compact]{titlesec}
-% \titleformat{\section}{\large\bfseries}{\thesection}{1em}{}
-% \titleformat{\subsection}{\large}{\thesubsection}{.6em}{\flatcaps}
-% \titleformat{\subsubsection}{}{\thesubsubsection}{.6em}{}{\itshape}
-% \titleformat{\paragraph}[runin]{\flatcaps}{\theparagraph}{0pt}{}
-% \titlespacing*{\section}{0pt}{2\baselineskip}{1\baselineskip}
-% \titlespacing*{\subsection}{0pt}{1\baselineskip}{1\baselineskip}
-% \titlespacing*{\subsubsection}{0pt}{8pt}{5pt}
 
 
 %%% [TikZ]
@@ -205,37 +136,29 @@
 %
 %% TikZ libraries
 \usetikzlibrary{
-    arrows.meta,
-    automata,
-    backgrounds,
+    % arrows.meta,
+    % automata,
+    % backgrounds,
     calc,
-    fit,
+    % fit,
     positioning,
-    svg.path,
-    trees,
-    decorations.pathreplacing,
+    % svg.path,
+    % trees,
+    % decorations.pathreplacing,
 }
 %
 %% Common TikZ setup
 \tikzset{
     % every text node part/.style={align=center},
 }
-%
-%% Macro to place code only in preamble
-% Note: useful for subfiles
-\newcommand{\onlyinpreamble}[1]{% {<text>}
-    \ifx\@onlypreamble\@notprerr% after \begin{document}
-    \else% before \begin{document}
-        #1%
-    \fi}
-%
 %% Macro to enable preview for subfiles with TikZ pictures
 \newcommand{\enabletikzpreview}[1][2pt]{% [<border>]
     \onlyinpreamble{%
         \usepackage[active,tightpage]{preview}
         \PreviewBorder=#1
         \PreviewEnvironment{tikzpicture}
-    }}
+    }%
+}
 
 
 %%% [tcolorbox]
@@ -272,6 +195,15 @@
 %% Check the package is loaded. Can be used inside \begin{documen}
 \usepackage{ltxcmds}
 \newcommand*{\IfPackageLoaded}{\ltx@ifpackageloaded}
+%
+%% Macro to place code only in preamble
+% Note: useful for subfiles
+\newcommand{\onlyinpreamble}[1]{% {<text>}
+    \ifx\@onlypreamble\@notprerr% after \begin{document}
+    \else% before \begin{document}
+        #1%
+    \fi%
+}
 
 
 %%% [Add your packages below]
@@ -378,6 +310,64 @@
 %% Space between text and arbitrary float
 % \setlength\textfloatsep{6pt plus 4pt}
 
+
+%%% [Memoir customizations]
+%
+%% TOC depth
+\settocdepth{section}
+\maxtocdepth{section}
+%
+%% Sections numbering
+\setsecnumdepth{chapter}
+\maxsecnumdepth{chapter}
+%
+%% Chapter style for \mainmatter
+\makechapterstyle{MyChapterStyle}{
+    \renewcommand{\thechapter}{\Roman{chapter}}
+    \setlength{\beforechapskip}{0pt}
+    \setlength{\midchapskip}{20pt}
+    \setlength{\afterchapskip}{20pt}
+    \renewcommand*\chapterheadstart{}
+    \renewcommand*\chapnamefont{\Large\lsstyle\centering\MakeUppercase}
+    \renewcommand*\chapnumfont{\chapnamefont}
+    \renewcommand*\chaptitlefont{\huge\bfseries\centering}
+    \renewcommand*\printchaptertitle[1]{%
+        \setlength\tabcolsep{1pc}% used as indentation on both sides
+        \settowidth\@tempdimc{\chaptitlefont ##1}%
+        \setlength\@tempdimc{\textwidth-\@tempdimc-2\tabcolsep}%
+        \chaptitlefont
+        \ifdim\@tempdimc > 0pt\relax% one line
+            \begin{tabular}{c}
+        \else% two+ lines
+            \begin{tabular}{%
+                >{\chaptitlefont\arraybackslash}p{\textwidth-4pc-2\tabcolsep}
+            }
+        \fi
+            \toprule
+            ##1 \\
+            \bottomrule
+        \end{tabular}
+    }
+}
+%
+%% Chapter style for \frontmatter
+\makechapterstyle{FrontMatterChapterStyle}{%
+    \chapterstyle{MyChapterStyle}
+    \renewcommand*{\chapterheadstart}{}
+    \renewcommand*{\printchaptername}{}
+    \renewcommand*{\printchapternum}{}
+    \renewcommand*{\afterchapternum}{}
+    \renewcommand*{\chaptitlefont}{\huge\centering}
+}
+%
+%% Chapters style
+\chapterstyle{MyChapterStyle}
+%
+%% Sections style
+\setsecheadstyle{\Large\bfseries\itshape\centering}
+%
+%% Subsection style
+\setsubsecheadstyle{\large\bfseries\centering}
 
 
 %%% [Extra stuff]

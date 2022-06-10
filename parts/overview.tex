@@ -1,6 +1,13 @@
 \documentclass[../main.tex]{subfiles}
 \begin{document}
 
+\ifSubfilesClassLoaded{% subfile
+    \frontmatter
+    \chapterstyle{FrontMatterChapterStyle}
+}{% main file
+    %
+}
+
 \chapter{Обзор}
 
 \begin{center}

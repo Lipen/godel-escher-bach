@@ -1,7 +1,14 @@
 \documentclass[../main.tex]{subfiles}
 \begin{document}
 
-\chapter[Предисловие]{Праздничное предисловие автора к русскому изданию книги «Гёдель, Эшер Бах»}
+\ifSubfilesClassLoaded{% subfile
+    \frontmatter
+    \chapterstyle{FrontMatterChapterStyle}
+}{% main file
+    %
+}
+
+\chapter[Предисловие]{Праздничное предисловие автора к русскому изданию книги «Гёдель, Эшер, Бах»}
 
 \subsection{Май MMI}
 
