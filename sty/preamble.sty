@@ -110,7 +110,7 @@
 \geometry{
     % margin=2cm,
     vmargin=1cm,
-    hmargin=4cm,
+    hmargin=3cm,
     % hmargin=1in,
     % textwidth=2.3\alphabet,
     % includehead,
@@ -396,23 +396,25 @@
 %% Common chapter macro
 \newcommand*{\Chapter}[1]{% {<title>}
     \chapterstyle{MyChapterStyle}
-    \chapter{#1}
+    \chapter[Глава~\Roman{chapter}:\ #1]{#1}
+    \chaptermark{#1}
 }
 \newcommand*{\ChapterOpt}[2][]{% [<opt>]{<title>}
     \chapterstyle{MyChapterStyle}
-    \chapter[#1]{#2}
+    \chapter[Глава~\Roman{chapter}:\ #1]{#2}
+    \chaptermark{#1}
 }
 %% Dialogue chapter macro
 \newcommand*{\DialogueChapter}[1]{% {<title>}
     \chapterstyle{DialogueChapterStyle}
     \chapter*{#1}
-    \addcontentsline{toc}{chapter}{#1}
+    \addcontentsline{toc}{chapter}{\textit{#1}}
     \chaptermark{#1}
 }
 \newcommand*{\DialogueChapterOpt}[2][]{% [<opt>]{<title>}
     \chapterstyle{DialogueChapterStyle}
     \chapter*{#2}
-    \addcontentsline{toc}{chapter}{#1}
+    \addcontentsline{toc}{chapter}{\textit{#1}}
     \chaptermark{#1}
 }
 
