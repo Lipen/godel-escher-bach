@@ -125,7 +125,7 @@
 \pagestyle{fancy}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
-\setlength{\footskip}{2\baselineskip}
+\setlength{\footskip}{3\baselineskip}
 % \renewcommand{\footrulewidth}{0.4pt}
 \fancyhf{}
 \fancyfoot[LE,RO]{\thepage}
@@ -326,17 +326,39 @@
 
 %%% [Memoir customizations]
 %
-%% TOC depth
+%% ToC: max depth
 \settocdepth{section}
 \maxtocdepth{section}
+%
+%% ToC: vertical space
+% Default values:
+% \setlength{\cftbeforebookskip}{2.25em \@plus\p@}
+% \setlength{\cftbeforepartskip}{2.25em \@plus\p@}
+% \setlength{\cftbeforechapterskip}{1.0em \@plus\p@}
+\setlength{\cftbeforepartskip}{2ex plus 2pt}
+\setlength{\cftbeforechapterskip}{1ex plus 2pt}
+%
+%% ToC: part name
+\renewcommand*{\cftpartname}{Часть\space}
+\renewcommand*{\cftpartaftersnum}{:\space}
+\renewcommand*{\partnumberlinebox}[2]{#2}
+%% ToC: chapter name
+\renewcommand*{\cftchaptername}{Глава\space}
+\renewcommand*{\cftchapteraftersnum}{:\space}
+\renewcommand*{\chapternumberlinebox}[2]{#2}
+%
+%% ToC: chapter dots
+\renewcommand*{\cftchapterdotsep}{\cftdotsep}
 %
 %% Sections numbering
 \setsecnumdepth{chapter}
 \maxsecnumdepth{chapter}
 %
+%% Roman numbers for chapters
+\renewcommand*\thechapter{\Roman{chapter}}
+%
 %% Chapter style for common chapters
 \makechapterstyle{MyChapterStyle}{
-    \renewcommand{\thechapter}{\Roman{chapter}}
     \setlength{\beforechapskip}{0pt}
     \setlength{\midchapskip}{20pt}
     \setlength{\afterchapskip}{20pt}
@@ -396,26 +418,26 @@
 %% Common chapter macro
 \newcommand*{\Chapter}[1]{% {<title>}
     \chapterstyle{MyChapterStyle}
-    \chapter[Глава~\Roman{chapter}:\ #1]{#1}
+    \chapter{#1}
     \chaptermark{#1}
 }
 \newcommand*{\ChapterOpt}[2][]{% [<opt>]{<title>}
     \chapterstyle{MyChapterStyle}
-    \chapter[Глава~\Roman{chapter}:\ #1]{#2}
+    \chapter{#2}
     \chaptermark{#1}
 }
 %% Dialogue chapter macro
 \newcommand*{\DialogueChapter}[1]{% {<title>}
     \chapterstyle{DialogueChapterStyle}
     \chapter*{#1}
-    \addcontentsline{toc}{chapter}{\textit{#1}}
-    \chaptermark{#1}
+    \addcontentsline{toc}{chapter}{\hspace{2pc}\normalfont\itshape #1}
+    \chaptermark{\normalfont\itshape #1}
 }
 \newcommand*{\DialogueChapterOpt}[2][]{% [<opt>]{<title>}
     \chapterstyle{DialogueChapterStyle}
     \chapter*{#2}
-    \addcontentsline{toc}{chapter}{\textit{#1}}
-    \chaptermark{#1}
+    \addcontentsline{toc}{chapter}{\hspace{2pc}\normalfont\itshape #1}
+    \chaptermark{\normalfont\itshape #1}
 }
 
 
