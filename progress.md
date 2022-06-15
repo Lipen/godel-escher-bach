@@ -208,10 +208,10 @@ TODO: formulae, macro for "tilde-negation", check n=0 vs n>2, cleanup comments
 
 ## Templates
 
-![progress](https://img.shields.io/badge/progress-0%-red?labelColor=blue)
-![progress](https://img.shields.io/badge/progress-20%-orange?labelColor=blue)
-![progress](https://img.shields.io/badge/progress-50%-yellow?labelColor=blue)
-![progress](https://img.shields.io/badge/progress-90%-green?labelColor=blue)
+![progress](https://img.shields.io/badge/progress-0%25-red?labelColor=blue)
+![progress](https://img.shields.io/badge/progress-20%25-orange?labelColor=blue)
+![progress](https://img.shields.io/badge/progress-50%25-yellow?labelColor=blue)
+![progress](https://img.shields.io/badge/progress-90%25-green?labelColor=blue)
 
 ![progress](https://progress-bar.dev/50/?title=progress)
 ![text](https://progress-bar.dev/0/?title=Text)
