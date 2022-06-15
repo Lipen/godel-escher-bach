@@ -16,6 +16,8 @@ latexmk -pdflatex main
 
 ### Work in progress
 
+[![Progress](https://progress-bar.dev/40/?title=Progress) (click for details)](progress.md)
+
 Currently, the plan is to finish transforming raw sources into TeX. This includes: copy-pasting text fragments, fixing typos (probably OCR artifacts), and reformatting text blocks, formulae, tables, illustrations, etc.
 
 The next steps are: creating a decent page design, formatting the dialogues, adding an index, implementing some images using TikZ, adding a bibliography.
