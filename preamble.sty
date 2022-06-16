@@ -1,62 +1,72 @@
 % %% Extend path for input files
 % \def\input@path{{../}}%
 
+\usepackage{iftex}
+
 %%% [Language]
 %
 %% (English-only setup)
+% \RequirePDFTeX
 % \usepackage{T1}
 % \usepackage[utf8]{inputenc}
 %
 %% (With Russian)
-% \usepackage{cmap}
-\usepackage[T2A]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage[english,russian]{babel}
-%
-%% Fix mapping for ligatures
-% https://tex.stackexchange.com/a/450394
-\input glyphtounicode
-\pdfgentounicode=1
-
-
-%%% [Math packages]
-% Note: load this before font packages
-\usepackage{amsmath}
-\usepackage{mathtools}
-% \usepackage{amssymb}
-% See docs:
-%  https://ctan.org/pkg/amsmath
-%  https://ctan.org/pkg/mathtools
+\ifpdftex
+    \usepackage[T2A]{fontenc}
+    \usepackage[utf8]{inputenc}
+    \usepackage[english,russian]{babel}
+\else
+    % TODO: switch to polyglossia
+    \usepackage[english,russian]{babel}
+\fi
 
 
 %%% [Font setup]
 %
-%% Plain lmodern
-% \usepackage{lmodern}
+%% Note: load 'amsmath' before loading the math font package
+\usepackage{amsmath}
 %
-%% Libertine + NewTX-math
-\usepackage[tt=false]{libertine}
-\usepackage{libertinegc}
-\usepackage[varqu,varl]{inconsolata} % typewriter
-% \usepackage[scaled=.95]{cabin} % sans serif like Gill Sans
-\usepackage[libertine,smallerops]{newtxmath}
-%
-%% Erewhon + NewTX-math
-% \usepackage[scaled=.98,space]{erewhon}
-% \usepackage[varqu,varl]{inconsolata} % typewriter
-% \usepackage[scaled=.95]{cabin} % sans serif like Gill Sans
-% \usepackage[utopia,smallerops]{newtxmath}
-% %% \usepackage[type1,scaled=.95]{cabin} % sans serif like Gill Sans
-% %% \usepackage[utopia,vvarbb,smallerops]{newtxmath}
+\iftutex
+    %% Libertine + NewTX-math
+    % Note: use [sb] in order to workaround the lack of bold-italic cyrillic glyphs in the libertine font
+    \usepackage[tt=false,sb]{libertine}
+    \usepackage[varqu,varl]{inconsolata} % typewriter
+    \usepackage[libertine,smallerops]{newtxmath}
+\else
+    %% Libertine + NewTX-math
+    \usepackage[tt=false]{libertine}
+    \usepackage{libertinegc}
+    \usepackage[varqu,varl]{inconsolata} % typewriter
+    \usepackage[libertine,smallerops]{newtxmath}
+    %
+    %% Fix mapping for ligatures libertine)
+    % https://tex.stackexchange.com/a/450394
+    \input glyphtounicode
+    \pdfgentounicode=1
+    %
+    %% Erewhon + NewTX-math
+    % \usepackage[scaled=.98,space]{erewhon}
+    % \usepackage[varqu,varl]{inconsolata} % typewriter
+    % \usepackage[scaled=.95]{cabin} % sans serif like Gill Sans
+    % \usepackage[utopia,smallerops]{newtxmath}
+    % %% \usepackage[type1,scaled=.95]{cabin} % sans serif like Gill Sans
+\fi
 
 
 %%% [Microtypography]
 \usepackage[
     babel=true,% Enable language-specific kerning
-    expansion=alltext,
-    protrusion=alltext-nott,
     final,% Always enable microtype, even if in draft mode.
 ]{microtype}
+%
+%% Redefine \lsstyle for XeLaTeX
+\def\letterspacingstyle{%
+    \ifxetex%
+        \addfontfeature{LetterSpace=30.0}% 10=1pt
+    \else%
+        \lsstyle%
+    \fi%
+}
 
 
 %%% [Common packages]
@@ -67,6 +77,7 @@
 \usepackage{moredefs}
 \usepackage{subfiles}
 \usepackage{scalerel}
+\usepackage{mathtools}
 \usepackage{xspace}
 \usepackage{xifthen}
 \usepackage{array}
@@ -127,12 +138,20 @@
 \renewcommand{\footrulewidth}{0pt}
 \setlength{\footskip}{3\baselineskip}
 \geometry{}% Apply geometry after changing \footskip
-% \renewcommand{\footrulewidth}{0.4pt}
 \fancyhf{}
 \fancyfoot[LE,RO]{\thepage}
 \fancyfoot[LO]{\bfseries\leftmark}
 \fancyfoot[RE]{\bfseries\rightmark}
+%
+%% Alias 'plain' style to 'fancy'
 \fancypagestyle{plain}{}
+%
+%% Fancy style for 'part' page
+\fancypagestyle{part}{
+    \renewcommand{\headrulewidth}{0pt}
+    \renewcommand{\footrulewidth}{0pt}
+    \fancyhf{}
+}
 
 
 %%% [TikZ]
@@ -194,7 +213,11 @@
 %
 %% New random seed every build
 \usepackage{pgf}
-\pgfmathsetseed{\number\pdfrandomseed}
+\iftutex
+    \pgfmathsetseed{\number\randomseed}
+\else
+    \pgfmathsetseed{\number\pdfrandomseed}
+\fi
 %
 %% Setup path to images
 \graphicspath{{img/}}
@@ -358,7 +381,8 @@
 \setsecnumdepth{chapter}
 \maxsecnumdepth{chapter}
 %
-%% Roman numbers for chapters
+%% Roman numbers for parts and chapters
+\renewcommand*\thepart{\Roman{part}}
 \renewcommand*\thechapter{\Roman{chapter}}
 %
 %% Chapter style for common chapters
@@ -367,9 +391,9 @@
     \setlength{\midchapskip}{20pt}
     \setlength{\afterchapskip}{20pt}
     \renewcommand*\chapterheadstart{}
-    \renewcommand*\chapnamefont{\Large\lsstyle\centering\MakeUppercase}
-    \renewcommand*\chapnumfont{\chapnamefont}
-    \renewcommand*\chaptitlefont{\huge\bfseries\centering}
+    \renewcommand*\chapnamefont{\normalfont\letterspacingstyle\Large\centering\MakeUppercase}
+    \renewcommand*\chapnumfont{}% keeps \chapnamefont
+    \renewcommand*\chaptitlefont{\normalfont\bfseries\huge\centering}
     \renewcommand*\printchaptertitle[1]{%
         \setlength\tabcolsep{1pc}% used as indentation on both sides
         \settowidth\@tempdimc{\chaptitlefont ##1}%
@@ -415,21 +439,35 @@
 %% Subsection style
 \setsubsecheadstyle{\large\bfseries\centering}
 %
-%% Custom \chaptermark
+%% Custom marks for parts
+\renewcommand*{\partmark}[1]{% {<arg>}
+    \relax%
+    % \markboth{#1}{#1}%
+}
+%% Custom marks for chapters
 \renewcommand*{\chaptermark}[1]{% {<arg>}
     \markboth{#1}{#1}%
 }
+%
+%% Common part macro
+\newcommand*{\Part}[1]{% {<title>}
+    \nopartblankpage
+    \part[\texorpdfstring{#1}{Часть \thepart}: #1]{#1}
+    \partmark{#1}
+}
+%
 %% Common chapter macro
 \newcommand*{\Chapter}[1]{% {<title>}
     \chapterstyle{MyChapterStyle}
-    \chapter{#1}
+    \chapter[\texorpdfstring{#1}{Глава \thechapter: #1}]{#1}
     \chaptermark{#1}
 }
-\newcommand*{\ChapterOpt}[2][]{% [<opt>]{<title>}
+\newcommand*{\ChapterOpt}[2][]{% [<mark>]{<title>}
     \chapterstyle{MyChapterStyle}
     \chapter{#2}
     \chaptermark{#1}
 }
+%
 %% Dialogue chapter macro
 \newcommand*{\DialogueChapter}[1]{% {<title>}
     \chapterstyle{DialogueChapterStyle}
@@ -437,7 +475,7 @@
     \addcontentsline{toc}{chapter}{\hspace{2pc}\normalfont\itshape #1}
     \chaptermark{\normalfont\itshape #1}
 }
-\newcommand*{\DialogueChapterOpt}[2][]{% [<opt>]{<title>}
+\newcommand*{\DialogueChapterOpt}[2][]{% [<mark>]{<title>}
     \chapterstyle{DialogueChapterStyle}
     \chapter*{#2}
     \addcontentsline{toc}{chapter}{\hspace{2pc}\normalfont\itshape #1}
