@@ -14,42 +14,20 @@
 \ifpdftex
     \usepackage[T2A]{fontenc}
     \usepackage[utf8]{inputenc}
-    \usepackage[english,russian]{babel}
-\else
-    % TODO: switch to polyglossia
-    \usepackage[english,russian]{babel}
 \fi
+\usepackage[english,main=russian]{babel}
 
 
 %%% [Font setup]
-%
-%% Note: load 'amsmath' before loading the math font package
-\usepackage{amsmath}
-%
 \iftutex
-    %% Libertine + NewTX-math
-    % Note: use [sb] in order to workaround the lack of bold-italic cyrillic glyphs in the libertine font
-    \usepackage[tt=false,sb]{libertine}
-    \usepackage[varqu,varl]{inconsolata} % typewriter
-    \usepackage[libertine,smallerops]{newtxmath}
+    %% Libertinus font
+    \usepackage[libertinus]{fontsetup}
+    % Note: Libertinus Mono (\texttt) does not have cyrillic glyphs!
 \else
-    %% Libertine + NewTX-math
-    \usepackage[tt=false]{libertine}
-    \usepackage{libertinegc}
-    \usepackage[varqu,varl]{inconsolata} % typewriter
-    \usepackage[libertine,smallerops]{newtxmath}
-    %
-    %% Fix mapping for ligatures libertine)
-    % https://tex.stackexchange.com/a/450394
-    \input glyphtounicode
-    \pdfgentounicode=1
-    %
-    %% Erewhon + NewTX-math
-    % \usepackage[scaled=.98,space]{erewhon}
-    % \usepackage[varqu,varl]{inconsolata} % typewriter
-    % \usepackage[scaled=.95]{cabin} % sans serif like Gill Sans
-    % \usepackage[utopia,smallerops]{newtxmath}
-    % %% \usepackage[type1,scaled=.95]{cabin} % sans serif like Gill Sans
+    %% Libertinus font (serif+sans)
+    \usepackage[tt=false]{libertinus}
+    %% Libertinus Math
+    \usepackage{libertinust1math}
 \fi
 
 
