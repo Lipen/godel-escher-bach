@@ -1,0 +1,187 @@
+= link:main.tex[Гёдель, Эшер, Бах]
+
+[%header,cols="~,~,~a"]
+|===
+| Глава/Диалог | Готовность | TODO
+
+3+^h| Часть I: ГЭБ
+
+| link:parts/introduction.tex[Интродукция: музыко-логическое приношение]
+| image:https://progress-bar.dev/80/?title=progress[]
+| illustrations, letter
+
+| link:parts/dial01.tex[Трехголосная инвенция]
+| image:https://progress-bar.dev/100/?title=progress[]
+|
+
+| link:parts/ch01.tex[Глава I: Головоломка MU]
+| image:https://progress-bar.dev/95/?title=progress[]
+| blocks
+
+| link:parts/dial02.tex[Двухголосная инвенция]
+| image:https://progress-bar.dev/90/?title=progress[]
+| subtitle, statements
+
+| link:parts/ch02.tex[Глава II: Содержание и форма в математике]
+| image:https://progress-bar.dev/95/?title=progress[]
+| minor fixes
+
+| link:parts/dial03.tex[Соната для Ахилла соло]
+| image:https://progress-bar.dev/100/?title=progress[]
+|
+
+| link:parts/ch03.tex[Глава III: Рисунок и фон]
+| image:https://progress-bar.dev/90/?title=progress[]
+| 1 illustration, macro for "formal strings"
+
+| link:parts/dial04.tex[Акростиконтрапунктус]
+| image:https://progress-bar.dev/90/?title=progress[]
+| 1 illustration
+
+| link:parts/ch04.tex[Глава IV: Непротиворечивость, полнота и геометрия]
+| image:https://progress-bar.dev/80/?title=progress[]
+| 3 illustrations, blocks
+
+| link:parts/dial05.tex[Маленький гармонический лабиринт]
+| image:https://progress-bar.dev/99/?title=progress[]
+| cleanup comments
+
+| link:parts/ch05.tex[Глава V: Рекурсивные структуры и процессы]
+| image:https://progress-bar.dev/20/?title=progress[]
+| many illustrations, many formulae, blocks, refs, spaces
+
+| link:parts/dial06.tex[Канон с интервальным увеличением]
+| image:https://progress-bar.dev/100/?title=progress[]
+|
+
+| link:parts/ch06.tex[Глава VI: Местонахождение значения]
+| image:https://progress-bar.dev/30/?title=progress[]
+| 3 illustrations, blocks, formulae, spaces
+
+| link:parts/dial07.tex[Хроматическая фантазия и фига]
+| image:https://progress-bar.dev/100/?title=progress[]
+|
+
+| link:parts/ch07.tex[Глава VII: Исчисление Высказываний]
+| image:https://progress-bar.dev/10/?title=progress[]
+| illustrations, formulae, subsections, blocks, spaces, ALL
+
+| link:parts/dial08.tex[Крабий канон]
+| image:https://progress-bar.dev/90/?title=progress[]
+| 2 illustrations
+
+| link:parts/ch08.tex[Глава VIII: Типографская теория чисел]
+| image:https://progress-bar.dev/10/?title=progress[]
+| illustrations, formulae, subsections, blocks, spaces, ALL
+
+| link:parts/dial09.tex[Приношение «МУ»]
+| image:https://progress-bar.dev/80/?title=progress[]
+| 1 illustration, block, koan box
+
+| link:parts/ch09.tex[Глава IX: Мумон и Гёдель]
+| image:https://progress-bar.dev/10/?title=progress[]
+| illustrations, formulae, subsections, blocks, spaces, ALL
+
+3+^h| Часть II: ЭГБ
+
+| link:parts/dial10.tex[Прелюдия и...]
+| image:https://progress-bar.dev/0/?title=progress[]
+|
+
+| link:parts/ch10.tex[Глава X: Уровни описания и компьютерные системы]
+| image:https://progress-bar.dev/0/?title=progress[]
+|
+
+| link:parts/dial11.tex[...и Муравьиная фуга]
+| image:https://progress-bar.dev/0/?title=progress[]
+|
+
+| link:parts/ch11.tex[Глава XI: Мозг и мысль]
+| image:https://progress-bar.dev/0/?title=progress[]
+|
+
+| link:parts/dial12.tex[Англо-франко-германо-русская сюита]
+| image:https://progress-bar.dev/0/?title=progress[]
+|
+
+| link:parts/ch12.tex[Глава XII: Разум и мысль]
+| image:https://progress-bar.dev/0/?title=progress[]
+|
+
+| link:parts/dial13.tex[Ария с разнообразными вариациями]
+| image:https://progress-bar.dev/0/?title=progress[]
+|
+
+| link:parts/ch13.tex[Глава XIII: Блуп, Флуп и Глуп]
+| image:https://progress-bar.dev/0/?title=progress[]
+|
+
+| link:parts/dial14.tex[Ария в ключе G]
+| image:https://progress-bar.dev/0/?title=progress[]
+|
+
+| link:parts/ch14.tex[Глава XIV: О формально неразрешимых суждениях ТТЧ и родственных систем]
+| image:https://progress-bar.dev/0/?title=progress[]
+|
+
+| link:parts/dial15.tex[Праздничная Кантататата...]
+| image:https://progress-bar.dev/0/?title=progress[]
+|
+
+| link:parts/ch15.tex[Глава XV: Прыжок из системы]
+| image:https://progress-bar.dev/0/?title=progress[]
+|
+
+| link:parts/dial16.tex[Благочестивые размышления курильщика табака]
+| image:https://progress-bar.dev/0/?title=progress[]
+|
+
+| link:parts/ch16.tex[Глава XVI: Авто-реф и авто-реп]
+| image:https://progress-bar.dev/0/?title=progress[]
+|
+
+| link:parts/dial17.tex[Магнификраб в пирожоре]
+| image:https://progress-bar.dev/70/?title=progress[]
+| formulae, macro for "tilde-negation", check n=0 vs n>2, cleanup comments
+
+| link:parts/ch17.tex[Глава XVII: Чёрч, Тюринг, Тарский и другие]
+| image:https://progress-bar.dev/0/?title=progress[]
+|
+
+| link:parts/dial18.tex[ШРДЛУ]
+| image:https://progress-bar.dev/0/?title=progress[]
+|
+
+| link:parts/ch18.tex[Глава XVIII: Искусственный интеллект: взгляд в прошлое]
+| image:https://progress-bar.dev/0/?title=progress[]
+|
+
+| link:parts/dial19.tex[Контрафактус]
+| image:https://progress-bar.dev/0/?title=progress[]
+|
+
+| link:parts/ch19.tex[Глава XIX: Искусственный Интеллект: виды на будущее]
+| image:https://progress-bar.dev/0/?title=progress[]
+|
+
+| link:parts/dial20.tex[Канон Ленивца]
+| image:https://progress-bar.dev/0/?title=progress[]
+|
+
+| link:parts/ch20.tex[Глава XX: Странные Петли или Запутанные Иерархии]
+| image:https://progress-bar.dev/0/?title=progress[]
+|
+
+| link:parts/dial21.tex[Шестиголосый Ричеркар]
+| image:https://progress-bar.dev/0/?title=progress[]
+|
+|===
+
+// https://img.shields.io/badge/progress-0%25-red?labelColor=blue
+// https://img.shields.io/badge/progress-20%25-orange?labelColor=blue
+// https://img.shields.io/badge/progress-50%25-yellow?labelColor=blue
+// https://img.shields.io/badge/progress-90%25-green?labelColor=blue
+
+// https://progress-bar.dev/50/?title=progress
+// https://progress-bar.dev/0/?title=Text
+// https://progress-bar.dev/0/?title=Illustrations&scale=10&suffix=+of+10
