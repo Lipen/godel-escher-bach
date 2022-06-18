@@ -42,3 +42,7 @@ _*
 *.synctex.gz
 *.synctex.gz(busy)
 *.pdfsync
+# Index auxiliary files:
+*.idx
+*.ind
+*.ilg
