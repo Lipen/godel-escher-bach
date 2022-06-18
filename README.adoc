@@ -1,0 +1,33 @@
+= TeXification of "Gödel, Escher, Bach"
+:hide-uri-scheme:
+
+:fn-rus: footnote:[Д.Р. Хофштадтер "Гёдель, Эшер, Бах: эта бесконечная гирлянда".]
+> This repository contains a $\TeX$ reproduction of the Russian translation{fn-rus} of the book "Gödel, Escher, Bach: An Eternal Golden Braid" by link:https://en.wikipedia.org/wiki/Douglas_Hofstadter[Douglas Hofstadter].
+
+== Build
+
+link:https://texlive2020.latexonline.cc/compile?git=https://github.com/Lipen/godel-escher-bach&target=main.tex&command=pdflatex[Render online]
+
+Or make it yourself:
+
+[source]
+----
+latexmk -pdflatex main
+----
+
+== Work in progress
+
+image:https://progress-bar.dev/40/?title=Progress[link="progress.adoc"] (link:progress.adoc[click for details])
+
+See link:CONTRIBUTING.md[] if you wanna help!
+
+Currently, the plan is to finish transforming raw sources into TeX. This includes: copy-pasting text fragments, fixing typos (probably OCR artifacts), and reformatting text blocks, formulae, tables, illustrations, etc.
+
+The next steps are: creating a decent page design, formatting the dialogues, adding an index, implementing some images using TikZ, adding a bibliography.
+
+== Credits
+
+* The source text in DOC format was taken from the site https://royallib.com.
+* DOC sources were converted to LaTeX using link:https://pandoc.org[`pandoc`] utility.
+* Illustrations were mostly found online, or screenshoted from the original ebook.
+* Some illustrations were automagically upscaled and colorized using Photoshop.
