@@ -39,9 +39,11 @@
 %
 %% Redefine \lsstyle for XeLaTeX
 \def\letterspacingstyle{%
+    % Note: for 12pt font size, 1em=12pt
     \ifxetex%
-        \addfontfeature{LetterSpace=30.0}% 10=1pt
+        \addfontfeature{LetterSpace=30.0}% 10=1pt, [30=3pt]
     \else%
+        \edef\MT@letterspace@{250}% 1000=1em, [250=3pt]
         \lsstyle%
     \fi%
 }
@@ -369,9 +371,10 @@
     \setlength{\midchapskip}{20pt}
     \setlength{\afterchapskip}{20pt}
     \renewcommand*\chapterheadstart{}
-    \renewcommand*\chapnamefont{\normalfont\letterspacingstyle\Large\centering\MakeUppercase}
+    \renewcommand*\chapnamefont{\normalfont\Large\centering\begingroup\letterspacingstyle\MakeUppercase}% begins local group for \lsstyle
     \renewcommand*\chapnumfont{}% keeps \chapnamefont
-    \renewcommand*\chaptitlefont{\normalfont\bfseries\huge\centering}
+    \renewcommand*\printchapternum{\chapnumfont \thechapter\endgroup}% ends local group for \lsstyle
+    \renewcommand*\chaptitlefont{\normalfont\huge\bfseries\centering}
     \renewcommand*\printchaptertitle[1]{%
         \setlength\tabcolsep{1pc}% used as indentation on both sides
         \settowidth\@tempdimc{\chaptitlefont ##1}%
