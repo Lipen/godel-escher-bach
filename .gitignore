@@ -3,7 +3,7 @@ trash
 _*
 *.pdf
 *.txt
-test.tex
+/test/
 /img/orig/
 /img/edit/
 /img/psd/
