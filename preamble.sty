@@ -464,6 +464,66 @@
 }
 
 
+%%% [Acronyms]
+\usepackage{acro}
+\usepackage{pdfcomment}
+%
+%% General ACRO setup
+\acsetup{
+    %% print all acronyms, including unused
+    list/display = all ,
+    %% include only page with the first usage
+    pages/display = first ,
+    %% do not display foreign definition in text
+    foreign/display = false ,
+    %% create pdf tooltips
+    pdfcomments/use = true ,
+    %% create link to the list of acronyms
+    % make-links = true ,
+    %% make link only for the first usage
+    % link-only-first = true ,
+    %% format of the first long usage
+    format/first-long = \emph ,
+}
+%
+%% Russian translation for ACRO
+\AddAcroTranslations{Russian}{
+    list-name = Аббревиатуры ,
+    page = с\abbrdot ,
+    pages = сс\abbrdot ,
+    sequens = f\abbrdot ,
+    sequentes = ff\abbrdot ,
+    also = ещё ,
+    and = и ,
+    or = или ,
+}
+%
+%% Genetive case
+\DeclareAcroEnding{possessive}{'s}{'s}
+\NewAcroCommand\acg{m}{\acropossessive\UseAcroTemplate{first}{#1}}
+\NewAcroCommand\acsg{m}{\acropossessive\UseAcroTemplate{short}{#1}}
+\NewAcroCommand\aclg{m}{\acropossessive\UseAcroTemplate{long}{#1}}
+\NewAcroCommand\acfg{m}{\acrofull\acropossessive\UseAcroTemplate{first}{#1}}
+%
+\DeclareAcronym{nt}{
+    short = Ч ,
+    long = Теория Чисел ,
+    possessive = ,
+    % foreign = Number Theory ,
+    % foreign-babel = english ,
+    pdfcomment = (обыкновенная) Теория Чисел ,
+}
+\DeclareAcronym{tnt}{
+    short = ТТЧ ,
+    long = Типографская Теория Чисел ,
+    possessive = ,
+    long-possessive-form = Типографской Теории Чисел ,
+    % foreign = Typographical Number Theory ,
+    % foreign-babel = english ,
+    pdfcomment = Типографская Теория Чисел ,
+}
+
+
 %%% [Extra stuff]
 
 %% Simple dialogue
