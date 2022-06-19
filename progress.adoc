@@ -71,7 +71,7 @@
 | 2 illustrations
 
 | link:parts/ch08.tex[Глава VIII: Типографская теория чисел]
-| image:https://progress-bar.dev/10/?title=progress[]
+| image:https://progress-bar.dev/30/?title=progress[]
 | illustrations, formulae, subsections, blocks, spaces, ALL
 
 | link:parts/dial09.tex[Приношение «МУ»]
