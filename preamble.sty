@@ -78,6 +78,7 @@
 \usepackage{multirow}
 \usepackage{makecell}
 \usepackage{longtable}
+\usepackage{tabularray}
 \usepackage{witharrows}
 \usepackage{nicematrix}
 \usepackage{ellipsis}
@@ -470,6 +471,10 @@
 %
 %% General ACRO setup
 \acsetup{
+    %% heading of a list of acronyms
+    list/heading = section ,
+    %% style of the list of acronyms
+    list/template = tabularray ,
     %% print all acronyms, including unused
     list/display = all ,
     %% include only page with the first usage
@@ -505,22 +510,46 @@
 \NewAcroCommand\aclg{m}{\acropossessive\UseAcroTemplate{long}{#1}}
 \NewAcroCommand\acfg{m}{\acrofull\acropossessive\UseAcroTemplate{first}{#1}}
 %
-\DeclareAcronym{nt}{
+%% Abbreviations
+%
+\NewDocumentCommand\newabbreviation{mm}{%
+    \DeclareAcronym{#1}{ #2 , tag = abbrev , no-index }%
+}
+\NewDocumentCommand\printabbreviations{O{}}{%
+    \printacronyms[#1,include=abbrev]%
+}
+%
+\newabbreviation{nt}{
     short = Ч ,
     long = Теория Чисел ,
-    possessive = ,
+    pdfcomment = (обыкновенная) Теория Чисел ,
     % foreign = Number Theory ,
     % foreign-babel = english ,
-    pdfcomment = (обыкновенная) Теория Чисел ,
 }
-\DeclareAcronym{tnt}{
+\newabbreviation{tnt}{
     short = ТТЧ ,
     long = Типографская Теория Чисел ,
-    possessive = ,
     long-possessive-form = Типографской Теории Чисел ,
+    pdfcomment = Типографская Теория Чисел ,
     % foreign = Typographical Number Theory ,
     % foreign-babel = english ,
-    pdfcomment = Типографская Теория Чисел ,
+    possessive = ,
+}
+%
+%% Glossary
+%
+\NewDocumentCommand\newglossaryterm{mm}{%
+    \DeclareAcronym{#1}{ #2 , tag = term , no-index }%
+}
+\NewDocumentCommand\printglossaryterms{O{}}{%
+    \printacronyms[#1,include=term]%
+}
+%
+\newglossaryterm{ricercar}{
+    short = ricercar ,
+    short-format = \scshape ,
+    long = Regis Iussu Cantio Et Reliqua Canonica Arte Resoluta ,
+    long-format = \emph ,
 }
 
 
