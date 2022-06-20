@@ -1,0 +1,59 @@
+\documentclass[../main.tex]{subfiles}
+\enabletikzpreview%
+\begin{document}%
+\begin{tikzpicture}[
+    thick,
+    font=\bfseries,
+    ->-/.style={
+        decoration={
+            markings,
+            mark=at position 0.5 with {\arrow{Stealth[scale=1.5]}}
+        },
+        postaction={decorate},
+    },
+]
+\def\myX{3cm}
+\def\myY{3.5cm}
+
+\path
+    (0,0) coordinate (begin)
+    ++(\myX,0) coordinate (read)
+    ++(0,-\myY) coordinate (achilles)
+    ++(\myX,0) coordinate (push)
+    ++(0,-\myY) coordinate (convex-and-concave)
+    ++(\myX-0.5cm,0) coordinate (limbo)
+    ++(\myX+1cm,0) coordinate (reptiles-1)
+    ++(\myX-0.5cm,0) coordinate (descent)
+    ++(0,-\myY) coordinate (labyrinth)
+    ++(\myX,0) coordinate (pop)
+    ++(0,\myY) coordinate (reptiles-2)
+    ++(\myX,0) coordinate (move)
+    ++(0,\myY) coordinate (tortille)
+    ++(\myX,0) coordinate (end)
+    ++(0,\myY) coordinate (above-end)
+;
+\path (limbo) ++(0.2,-0.1) coordinate (limbo-text-begin);
+\path (reptiles-1) ++(-0.1,-0.2) coordinate (limbo-text-end);
+
+\draw (begin) -- node[below,align=center]{Вертолёт \\ г-на Удачи} (read);
+\draw[->-] (read) -- node[sloped,above,align=center]{\emph{Читают книгу}} (achilles);
+\draw (achilles) -- node[below,align=center]{Дом Ахилла} (push);
+\draw[->-] (push) -- node[sloped,above,align=center,text width=\myY]{\emph{Пьют протал\-кивающее зелье}} (convex-and-concave);
+\draw (convex-and-concave) -- node[below,align=center]{Выпуклое \\ и вогнутое} (limbo);
+\draw[decorate,decoration={snake,segment length=20}] (limbo) +(0,0.4*\myY) -- +(0,-0.4*\myY);
+\draw[decorate,decoration={text along path, text align=fit to path, text={{{{Л}}}{{И}}{{М}}{{Б}}{{Е}}{{Д}}{{Л}}{{А}}{{М}}{{И}}{{Я}}}}] (limbo-text-begin) to[out=45,in=45+180] (limbo-text-end);
+\draw[decorate,decoration={snake,segment length=20}] (reptiles-1) +(0,-0.4*\myY) -- +(0,0.4*\myY);
+\draw (reptiles-1) -- node[below,align=center]{Рептилии} (descent);
+\draw[->-] (descent) -- node[sloped,above,align=center,text width=\myY]{\emph{Спускаются на один этаж}} (labyrinth);
+\draw (labyrinth) -- node[below,align=center]{Маленький гармонический \\ лабиринт злобного Мажотавра} (pop);
+\draw[->-] (pop) -- node[sloped,above,align=center,text width=\myY]{\emph{Пьют вытал\-кивающую настойку}} (reptiles-2);
+\draw (reptiles-2) -- node[below,align=center]{Рептилии} (move);
+\draw[->-] (move) -- node[sloped,above,align=center,text width=\myY]{\emph{Движутся пер\-пендикулярно к картине}} (tortille);
+\draw (tortille) -- node[below,align=center]{Дом Черепахи} (end);
+\draw [line width=2pt, line cap=round, dash pattern=on 0pt off 10pt]
+    ([xshift=5pt]push) -- ([xshift=-5pt]tortille)
+    ([xshift=5pt]read) -- ([xshift=-5pt]above-end)
+    ([xshift=5pt]descent) -- ([xshift=-5pt]reptiles-2);
+
+\end{tikzpicture}%
+\end{document}
