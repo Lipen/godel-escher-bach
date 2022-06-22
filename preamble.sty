@@ -85,7 +85,6 @@
 \usepackage{environ}
 \usepackage{lipsum}
 \usepackage{siunitx}
-\usepackage{verse}
 \usepackage{paracol}
 \usepackage{xlop}
 \usepackage{calc}
@@ -95,15 +94,14 @@
 %
 %% Some necessary macros
 \newlength{\alphabet}
-\settowidth{\alphabet}{\normalfont abcdefghijklmnopqrstuvwxyz}
+% \settowidth{\alphabet}{\normalfont abcdefghijklmnopqrstuvwxyz}
+\settowidth{\alphabet}{\normalfont абвгдеёжзийклмнопрстуфхцчшщъыьэюя}
 %
 %% Page geometry
 \usepackage{geometry}
 \geometry{
-    % margin=2cm,
     vmargin=1cm,
-    hmargin=3cm,
-    % hmargin=1in,
+    hmargin=2cm,
     % textwidth=2.3\alphabet,
     % includehead,
     includefoot,
@@ -370,8 +368,8 @@
 %% Chapter style for common chapters
 \makechapterstyle{MyChapterStyle}{
     \setlength{\beforechapskip}{0pt}
-    \setlength{\midchapskip}{20pt}
-    \setlength{\afterchapskip}{20pt}
+    \setlength{\midchapskip}{\medskipamount}
+    \setlength{\afterchapskip}{\bigskipamount}
     \renewcommand*\chapterheadstart{}
     \renewcommand*\chapnamefont{\normalfont\Large\centering\begingroup\letterspacingstyle\MakeUppercase}% begins local group for \lsstyle
     \renewcommand*\chapnumfont{}% keeps \chapnamefont
