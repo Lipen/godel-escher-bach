@@ -4,6 +4,22 @@
 |===
 | Глава/Диалог | Готовность | TODO
 
+| link:parts/preface.tex[Предисловие]
+| image:https://progress-bar.dev/100/?title=progress[]
+|
+
+| link:parts/overview.tex[Обзор]
+| image:https://progress-bar.dev/80/?title=progress[]
+| parskip, subtitles, references
+
+| link:parts/illustrations.tex[Список иллюcтраций]
+| image:https://progress-bar.dev/10/?title=progress[]
+| formatting, references
+
+| link:parts/acknowledment.tex[Благодарность]
+| image:https://progress-bar.dev/100/?title=progress[]
+|
+
 3+^h| Часть I: ГЭБ
 
 | link:parts/introduction.tex[Интродукция: музыко-логическое приношение]
