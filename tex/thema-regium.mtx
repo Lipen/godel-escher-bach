@@ -1,0 +1,15 @@
+% Title: Thema Regium
+% Composer: J.S. Bach
+Style: Solo
+Meter: C/
+Flats: 3
+Width: 115mm
+Systems: 2
+%%\nobarnumbers
+
+% Bar: 1-4
+c2+ e | g a | bn- r4 g+ | f2s fn |
+
+%%L2
+% Bar: 5-9
+en ( ef | e4 ) d df c | bn a8n fn c4+ f | e2 ot d | c4
