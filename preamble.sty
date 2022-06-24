@@ -77,7 +77,7 @@
 \usepackage{multirow}
 \usepackage{makecell}
 \usepackage{longtable}
-\usepackage{tabularray}
+% \usepackage{tabularray}
 \usepackage{ellipsis}
 \usepackage{environ}
 \usepackage{lipsum}
@@ -470,7 +470,8 @@
     %% heading of a list of acronyms
     list/heading = section ,
     %% style of the list of acronyms
-    list/template = tabularray ,
+    % list/template = tabularray ,
+    list/template = longtable ,
     %% print all acronyms, including unused
     list/display = all ,
     %% include only page with the first usage
