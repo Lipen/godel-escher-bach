@@ -399,6 +399,15 @@
     \renewcommand*{\chaptitlefont}{\huge\centering}
 }
 %
+%% Chapter style for \backmatter
+\makechapterstyle{BackMatterChapterStyle}{%
+    \chapterstyle{MyChapterStyle}
+    \renewcommand*{\printchaptername}{}
+    \renewcommand*{\printchapternum}{}
+    \renewcommand*{\afterchapternum}{}
+    \renewcommand*{\chaptitlefont}{\huge\centering}
+}
+%
 %% Chapter style for dialogues
 \makechapterstyle{DialogueChapterStyle}{%
     \chapterstyle{MyChapterStyle}
@@ -467,7 +476,7 @@
 %% General ACRO setup
 \acsetup{
     %% heading of a list of acronyms
-    list/heading = section ,
+    list/heading = chapter ,
     %% style of the list of acronyms
     % list/template = tabularray ,
     list/template = longtable ,
@@ -489,7 +498,7 @@
 %
 %% Russian translation for ACRO
 \AddAcroTranslations{Russian}{
-    list-name = Аббревиатуры ,
+    list-name = Список сокращений и обозначений ,
     page = с\abbrdot ,
     pages = сс\abbrdot ,
     sequens = f\abbrdot ,

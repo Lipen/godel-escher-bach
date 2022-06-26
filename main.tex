@@ -151,16 +151,21 @@
 % Шестиголосый Ричеркар
 \subfileinclude{parts/dial21}
 
+\backmatter
+\chapterstyle{BackMatterChapterStyle}
+
 %% Pull bookmarks out of the "part"
 \bookmarksetup{startatroot}
 
 %% List of Acronyms
 \printacronyms
 
-\section{Обозначения}
+% Отдельный список сокращений (tag=abbrev)
+\chapter{Список сокращений}
 \printabbreviations[heading=none]
 
-\section{Глоссарий}
+% Отдельный список терминов (tag=term)
+\chapter{Глоссарий}
 \printglossaryterms[heading=none]
 
 % \chapter{Notes}
