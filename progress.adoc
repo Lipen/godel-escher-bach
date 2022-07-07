@@ -117,8 +117,8 @@
 |
 
 | link:parts/dial12.tex[Англо-франко-германо-русская сюита]
-| image:https://progress-bar.dev/0/?title=progress[]
-|
+| image:https://progress-bar.dev/10/?title=progress[]
+| Format verses
 
 | link:parts/ch12.tex[Глава XII: Разум и мысль]
 | image:https://progress-bar.dev/0/?title=progress[]
