@@ -149,8 +149,8 @@
 |
 
 | link:parts/dial16.tex[Благочестивые размышления курильщика табака]
-| image:https://progress-bar.dev/0/?title=progress[]
-|
+| image:https://progress-bar.dev/70/?title=progress[]
+| 6 illustrations, verse (choose center/left alignment)
 
 | link:parts/ch16.tex[Глава XVI: Авто-реф и авто-реп]
 | image:https://progress-bar.dev/0/?title=progress[]
