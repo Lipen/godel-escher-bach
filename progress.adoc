@@ -181,8 +181,8 @@
 |
 
 | link:parts/dial20.tex[Канон Ленивца]
-| image:https://progress-bar.dev/0/?title=progress[]
-|
+| image:https://progress-bar.dev/90/?title=progress[]
+| 1 illustration
 
 | link:parts/ch20.tex[Глава XX: Странные Петли или Запутанные Иерархии]
 | image:https://progress-bar.dev/0/?title=progress[]
