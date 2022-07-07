@@ -125,8 +125,8 @@
 |
 
 | link:parts/dial13.tex[Ария с разнообразными вариациями]
-| image:https://progress-bar.dev/0/?title=progress[]
-|
+| image:https://progress-bar.dev/90/?title=progress[]
+| 1 illustration
 
 | link:parts/ch13.tex[Глава XIII: Блуп, Флуп и Глуп]
 | image:https://progress-bar.dev/0/?title=progress[]
