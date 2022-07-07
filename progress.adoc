@@ -173,7 +173,7 @@
 |
 
 | link:parts/dial19.tex[Контрафактус]
-| image:https://progress-bar.dev/0/?title=progress[]
+| image:https://progress-bar.dev/100/?title=progress[]
 |
 
 | link:parts/ch19.tex[Глава XIX: Искусственный Интеллект: виды на будущее]
