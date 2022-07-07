@@ -189,8 +189,8 @@
 |
 
 | link:parts/dial21.tex[Шестиголосый Ричеркар]
-| image:https://progress-bar.dev/0/?title=progress[]
-|
+| image:https://progress-bar.dev/80/?title=progress[]
+| 4 illustrations, verse in dialogue
 |===
 
 // https://img.shields.io/badge/progress-0%25-red?labelColor=blue
