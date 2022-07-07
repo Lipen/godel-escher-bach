@@ -730,3 +730,8 @@
     title=#2,
     #1,
 }
+
+%% Underlined fill
+% Example usage: \makebox[3em]{\ulfill}
+\newcommand*{\ulfill}{%
+    \leavevmode\leaders\hrule depth 2pt height -1.5pt\hfill}

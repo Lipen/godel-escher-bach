@@ -133,8 +133,8 @@
 |
 
 | link:parts/dial14.tex[Ария в ключе G]
-| image:https://progress-bar.dev/0/?title=progress[]
-|
+| image:https://progress-bar.dev/70/?title=progress[]
+| 1 illustration, blocks
 
 | link:parts/ch14.tex[Глава XIV: О формально неразрешимых суждениях ТТЧ и родственных систем]
 | image:https://progress-bar.dev/0/?title=progress[]
