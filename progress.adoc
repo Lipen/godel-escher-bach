@@ -101,8 +101,8 @@
 3+^h| Часть II: ЭГБ
 
 | link:parts/dial10.tex[Прелюдия и...]
-| image:https://progress-bar.dev/0/?title=progress[]
-|
+| image:https://progress-bar.dev/90/?title=progress[]
+| 1 illustration
 
 | link:parts/ch10.tex[Глава X: Уровни описания и компьютерные системы]
 | image:https://progress-bar.dev/0/?title=progress[]
