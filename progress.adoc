@@ -109,8 +109,8 @@
 |
 
 | link:parts/dial11.tex[...и Муравьиная фуга]
-| image:https://progress-bar.dev/0/?title=progress[]
-|
+| image:https://progress-bar.dev/80/?title=progress[]
+| 4 illustrations, block
 
 | link:parts/ch11.tex[Глава XI: Мозг и мысль]
 | image:https://progress-bar.dev/0/?title=progress[]
