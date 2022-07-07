@@ -141,7 +141,7 @@
 |
 
 | link:parts/dial15.tex[Праздничная Кантататата...]
-| image:https://progress-bar.dev/0/?title=progress[]
+| image:https://progress-bar.dev/100/?title=progress[]
 |
 
 | link:parts/ch15.tex[Глава XV: Прыжок из системы]

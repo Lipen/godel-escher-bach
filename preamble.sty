@@ -735,3 +735,34 @@
 % Example usage: \makebox[3em]{\ulfill}
 \newcommand*{\ulfill}{%
     \leavevmode\leaders\hrule depth 2pt height -1.5pt\hfill}
+
+%% Dots with exclamation and question marks
+% https://tex.stackexchange.com/a/266503/216486
+\newcommand{\centqm}{\makebox[\fontcharwd\font`.]{?}}
+\newcommand{\centqmkern}{\kern.2\fontcharwd\font`?}
+% "!.."
+\DeclareRobustCommand{\edots}{%
+    !\kern\fontdimen3\font
+    .\kern\fontdimen3\font
+    .\kern\fontdimen3\font
+}
+% "?.."
+\DeclareRobustCommand{\qdots}{%
+    \centqmkern
+    \centqm\kern\fontdimen3\font
+    .\kern\fontdimen3\font
+    .\kern\fontdimen3\font
+}
+% "?!."
+\DeclareRobustCommand{\qedots}{%
+    \centqmkern
+    \centqm\kern\fontdimen3\font
+    !\kern\fontdimen3\font
+    .\kern\fontdimen3\font
+}
+% "!?."
+\DeclareRobustCommand{\eqdots}{%
+    !\kern\fontdimen3\font
+    \centqm\kern\fontdimen3\font
+    .\kern\fontdimen3\font
+}
