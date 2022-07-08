@@ -37,7 +37,12 @@
 \subfileinclude{parts/acknowledgment}
 
 \mainmatter
-\chapterstyle{MyChapterStyle}
+
+%% Continuous figure numbering
+% Note: must be after \mainmatter
+\counterwithout{figure}{chapter}
+\renewcommand*{\thefigure}{\arabic{figure}}
+
 
 % Часть I: ГЭБ
 \Part{ГЭБ}
