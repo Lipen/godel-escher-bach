@@ -185,8 +185,8 @@
 | 1 illustration
 
 | link:parts/ch20.tex[Глава XX: Странные Петли или Запутанные Иерархии]
-| image:https://progress-bar.dev/0/?title=progress[]
-|
+| image:https://progress-bar.dev/30/?title=progress[]
+| 15 illustrations (some are diagrams), block (with left/right margins), references, math
 
 | link:parts/dial21.tex[Шестиголосый Ричеркар]
 | image:https://progress-bar.dev/80/?title=progress[]
