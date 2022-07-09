@@ -18,10 +18,9 @@ endif::[]
 ----
 git clone https://github.com/Lipen/godel-escher-bach
 cd godel-escher-bach
-git lfs pull
 ----
 
-IMPORTANT: `git lfs pull` (see link:https://git-lfs.github.com[Git LFS]) is necessary to download images. Without it, the final document won't compile.
+NOTE: You may want to use `git lfs pull` (see link:https://git-lfs.github.com[Git LFS]) in order to download all images (and probably other large files). However, modern Git should automatically do this for you (while `git clone`), so you don't have to.
 
 == Build
 
