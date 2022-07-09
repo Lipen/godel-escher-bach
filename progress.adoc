@@ -23,8 +23,8 @@
 3+^h| Часть I: ГЭБ
 
 | link:parts/introduction.tex[Интродукция: музыко-логическое приношение]
-| image:https://progress-bar.dev/85/?title=progress[]
-| illustrations
+| image:https://progress-bar.dev/90/?title=progress[]
+| 1 illustration, math, blocks
 
 | link:parts/dial01.tex[Трехголосная инвенция]
 | image:https://progress-bar.dev/100/?title=progress[]
