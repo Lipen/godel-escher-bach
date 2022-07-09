@@ -27,14 +27,14 @@ NOTE: You may want to use `git lfs pull` (see link:https://git-lfs.github.com[Gi
 * link:https://texlive2020.latexonline.cc/compile?git=https://github.com/Lipen/godel-escher-bach&target=main.tex&command=pdflatex[Render online]
 
 * ...or use link:https://personal.psu.edu/~jcc8/software/latexmk[latexmk] (see link:https://mg.readthedocs.io/latexmk.html[tutorial]):
-
++
 [source]
 ----
 latexmk -pdflatex main
 ----
 
 * ...or use link:https://tectonic-typesetting.github.io[Tectonic]:
-
++
 [source]
 ----
 tectonic main.tex
