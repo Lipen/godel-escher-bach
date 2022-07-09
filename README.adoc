@@ -10,7 +10,7 @@ ifdef::env-github[]
 endif::[]
 
 :fn-rus: footnote:[Д.Р. Хофштадтер "Гёдель, Эшер, Бах: эта бесконечная гирлянда".]
-> This repository contains a $\TeX$ reproduction of the Russian translation{fn-rus} of the book "Gödel, Escher, Bach: An Eternal Golden Braid" by link:https://en.wikipedia.org/wiki/Douglas_Hofstadter[Douglas Hofstadter].
+> This repository contains a $\TeX$ reproduction of the Russian translation{fn-rus} of the link:https://en.wikipedia.org/wiki/Godel,_Escher,_Bach[book] "Gödel, Escher, Bach: An Eternal Golden Braid" by link:https://en.wikipedia.org/wiki/Douglas_Hofstadter[Douglas Hofstadter].
 
 == Download
 
@@ -46,13 +46,23 @@ image:https://progress-bar.dev/40/?title=Progress[link="progress.adoc"] (link:pr
 
 See link:CONTRIBUTING.md[] if you wanna help!
 
-Currently, the plan is to finish transforming raw sources into TeX. This includes: copy-pasting text fragments, fixing typos (probably OCR artifacts), and reformatting text blocks, formulae, tables, illustrations, etc.
-
-The next steps are: creating a decent page design, formatting the dialogues, adding an index, implementing some images using TikZ, adding a bibliography.
+- [x] Transform raw sources into TeX
+- [x] Fix artefacts (typos, missing/unnecessary spaces, etc)
+- [x] Format dialogues
+- [ ] Format text blocks
+- [ ] Format math formulae
+- [ ] Format tables
+- [x] Format chapters/sections
+- [ ] Implement diagrams using TikZ
+- [ ] Add illustrations
+- [x] Add glossary
+- [ ] Add bibliography
+- [ ] Create fancy page design
 
 == Credits
 
-* The source text in DOC format was taken from the site https://royallib.com.
+* The source text in DOC format was taken from link:https://royallib.com[RoyalLib].
 * DOC sources were converted to LaTeX using link:https://pandoc.org[`pandoc`] utility.
 * Illustrations were mostly found online, or screenshoted from the original ebook.
+* Escher's drawings were taken from link:https://www.wikiart.org/en/m-c-escher/all-works/text-list[WikiArt].
 * Some illustrations were automagically upscaled and colorized using Photoshop.
