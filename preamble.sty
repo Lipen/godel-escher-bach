@@ -281,7 +281,12 @@
 %%% [Setup typography]
 %
 %% Paragraph indent
-\setlength{\parindent}{2pc}
+%  - 0.2in = 5mm;
+%  - 2pc = 8.43cm;
+%  - 7mm is similar to original
+\newlength{\myparindent}
+\setlength{\myparindent}{7mm}
+\setlength{\parindent}{\myparindent}
 %
 %% Rubber parskip (vertical space between paragraphs)
 % \abnormalparskip{0pt plus 0.1\baselineskip}
@@ -599,7 +604,7 @@
 \NewEnviron{Dialogue}{%
     %% Indent for paragraphs (leftmargin for 2+ lines)
     \providelength{\myindent}
-    \setlength{\myindent}{2pc}
+    \setlength{\myindent}{\myparindent}
     % \setlength{\myindent}{1cm}
 
     \setlength{\parindent}{\myindent}
