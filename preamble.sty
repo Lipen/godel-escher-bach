@@ -85,6 +85,7 @@
 \usepackage{paracol}
 \usepackage{xlop}
 \usepackage{calc}
+\usepackage{witharrows}
 
 
 %%% [Page setup]
@@ -98,7 +99,7 @@
 \usepackage{geometry}
 \geometry{
     vmargin=1cm,
-    hmargin=2cm,
+    hmargin=1.5cm,
     % textwidth=2.3\alphabet,
     % includehead,
     includefoot,
@@ -280,7 +281,12 @@
 %%% [Setup typography]
 %
 %% Paragraph indent
-\setlength{\parindent}{2pc}
+%  - 0.2in = 5mm;
+%  - 2pc = 8.43cm;
+%  - 7mm is similar to original
+\newlength{\myparindent}
+\setlength{\myparindent}{7mm}
+\setlength{\parindent}{\myparindent}
 %
 %% Rubber parskip (vertical space between paragraphs)
 % \abnormalparskip{0pt plus 0.1\baselineskip}
@@ -598,10 +604,8 @@
 \NewEnviron{Dialogue}{%
     %% Indent for paragraphs (leftmargin for 2+ lines)
     \providelength{\myindent}
-    \setlength{\myindent}{2pc}
+    \setlength{\myindent}{\myparindent}
     % \setlength{\myindent}{1cm}
-
-    \setlength{\parindent}{\myindent}
 
     %% Indent for levels
     \providelength{\mywidth}
@@ -728,4 +732,40 @@
     colbacktitle=black!50,
     title=#2,
     #1,
+}
+
+%% Underlined fill
+% Example usage: \makebox[3em]{\ulfill}
+\newcommand*{\ulfill}{%
+    \leavevmode\leaders\hrule depth 2pt height -1.5pt\hfill}
+
+%% Dots with exclamation and question marks
+% https://tex.stackexchange.com/a/266503/216486
+\newcommand{\centqm}{\makebox[\fontcharwd\font`.]{?}}
+\newcommand{\centqmkern}{\kern.2\fontcharwd\font`?}
+% "!.."
+\DeclareRobustCommand{\edots}{%
+    !\kern\fontdimen3\font
+    .\kern\fontdimen3\font
+    .\kern\fontdimen3\font
+}
+% "?.."
+\DeclareRobustCommand{\qdots}{%
+    \centqmkern
+    \centqm\kern\fontdimen3\font
+    .\kern\fontdimen3\font
+    .\kern\fontdimen3\font
+}
+% "?!."
+\DeclareRobustCommand{\qedots}{%
+    \centqmkern
+    \centqm\kern\fontdimen3\font
+    !\kern\fontdimen3\font
+    .\kern\fontdimen3\font
+}
+% "!?."
+\DeclareRobustCommand{\eqdots}{%
+    !\kern\fontdimen3\font
+    \centqm\kern\fontdimen3\font
+    .\kern\fontdimen3\font
 }

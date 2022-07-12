@@ -1,18 +1,43 @@
 = TeXification of "Gödel, Escher, Bach"
 :hide-uri-scheme:
 
+ifdef::env-github[]
+:tip-caption: :bulb:
+:note-caption: :information_source:
+:important-caption: :heavy_exclamation_mark:
+:caution-caption: :fire:
+:warning-caption: :warning:
+endif::[]
+
 :fn-rus: footnote:[Д.Р. Хофштадтер "Гёдель, Эшер, Бах: эта бесконечная гирлянда".]
-> This repository contains a $\TeX$ reproduction of the Russian translation{fn-rus} of the book "Gödel, Escher, Bach: An Eternal Golden Braid" by link:https://en.wikipedia.org/wiki/Douglas_Hofstadter[Douglas Hofstadter].
+> This repository contains a $\TeX$ reproduction of the Russian translation{fn-rus} of the link:https://en.wikipedia.org/wiki/Godel,_Escher,_Bach[book] "Gödel, Escher, Bach: An Eternal Golden Braid" by link:https://en.wikipedia.org/wiki/Douglas_Hofstadter[Douglas Hofstadter].
 
-== Build
-
-link:https://texlive2020.latexonline.cc/compile?git=https://github.com/Lipen/godel-escher-bach&target=main.tex&command=pdflatex[Render online]
-
-Or make it yourself:
+== Download
 
 [source]
 ----
+git clone https://github.com/Lipen/godel-escher-bach
+cd godel-escher-bach
+----
+
+NOTE: You may want to use `git lfs pull` (see link:https://git-lfs.github.com[Git LFS]) in order to download all images (and probably other large files). However, modern Git should automatically do this for you (while `git clone`), so you don't have to.
+
+== Build
+
+* link:https://texlive2020.latexonline.cc/compile?git=https://github.com/Lipen/godel-escher-bach&target=main.tex&command=pdflatex[Render online]
+
+* ...or use link:https://personal.psu.edu/~jcc8/software/latexmk[latexmk] (see link:https://mg.readthedocs.io/latexmk.html[tutorial]):
++
+[source]
+----
 latexmk -pdflatex main
+----
+
+* ...or use link:https://tectonic-typesetting.github.io[Tectonic]:
++
+[source]
+----
+tectonic main.tex
 ----
 
 == Work in progress
@@ -21,13 +46,23 @@ image:https://progress-bar.dev/40/?title=Progress[link="progress.adoc"] (link:pr
 
 See link:CONTRIBUTING.md[] if you wanna help!
 
-Currently, the plan is to finish transforming raw sources into TeX. This includes: copy-pasting text fragments, fixing typos (probably OCR artifacts), and reformatting text blocks, formulae, tables, illustrations, etc.
-
-The next steps are: creating a decent page design, formatting the dialogues, adding an index, implementing some images using TikZ, adding a bibliography.
+- [x] Transform raw sources into TeX
+- [x] Fix artefacts (typos, missing/unnecessary spaces, etc)
+- [x] Format dialogues
+- [ ] Format text blocks
+- [ ] Format math formulae
+- [ ] Format tables
+- [x] Format chapters/sections
+- [ ] Implement diagrams using TikZ
+- [ ] Add illustrations
+- [x] Add glossary
+- [ ] Add bibliography
+- [ ] Create fancy page design
 
 == Credits
 
-* The source text in DOC format was taken from the site https://royallib.com.
+* The source text in DOC format was taken from link:https://royallib.com[RoyalLib].
 * DOC sources were converted to LaTeX using link:https://pandoc.org[`pandoc`] utility.
 * Illustrations were mostly found online, or screenshoted from the original ebook.
+* Escher's drawings were taken from link:https://www.wikiart.org/en/m-c-escher/all-works/text-list[WikiArt].
 * Some illustrations were automagically upscaled and colorized using Photoshop.
