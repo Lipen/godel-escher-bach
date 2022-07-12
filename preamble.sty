@@ -515,13 +515,6 @@
     or = или ,
 }
 %
-%% Genetive case
-\DeclareAcroEnding{possessive}{'s}{'s}
-\NewAcroCommand\acg{m}{\acropossessive\UseAcroTemplate{first}{#1}}
-\NewAcroCommand\acsg{m}{\acropossessive\UseAcroTemplate{short}{#1}}
-\NewAcroCommand\aclg{m}{\acropossessive\UseAcroTemplate{long}{#1}}
-\NewAcroCommand\acfg{m}{\acrofull\acropossessive\UseAcroTemplate{first}{#1}}
-%
 %% Abbreviations
 %
 \NewDocumentCommand\newabbreviation{mm}{%
@@ -541,11 +534,10 @@
 \newabbreviation{tnt}{
     short = ТТЧ ,
     long = Типографская Теория Чисел ,
-    long-possessive-form = Типографской Теории Чисел ,
     pdfcomment = Типографская Теория Чисел ,
     % foreign = Typographical Number Theory ,
     % foreign-babel = english ,
-    possessive = ,
+}
 }
 %
 %% Glossary
