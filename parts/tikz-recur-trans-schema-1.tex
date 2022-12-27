@@ -1,0 +1,43 @@
+\documentclass[../main.tex]{subfiles}
+\enabletikzpreview%
+\begin{document}%
+% This diagram is being used in Chapter 5.
+\begin{tikzpicture}[
+    thick,
+    font=\bfseries,
+    ->-/.style={
+        decoration={
+            markings,
+            mark=at position 0.6 with {\arrow{Stealth[scale=1.5]}}
+        },
+        postaction={decorate},
+    },
+]
+
+\node[draw,ellipse,minimum height=1cm] (start) at (0,0) {\textit{начало}};
+\node[draw,align=center] (adj) at (3,0) {ПРИЛАГА-\\ТЕЛЬНОЕ};
+\node[draw,align=center] (noun) at (6,0) {СУЩЕСТВИ-\\ТЕЛЬНОЕ};
+\node[draw,ellipse,minimum height=1cm] (end) at (9,0) {\textit{конец}};
+
+\draw[->-] (start) -- (adj);
+\draw[->-] (adj) -- (noun);
+\draw[->-] (noun) -- (end);
+
+\path (start) ++(1.5,1) coordinate (a);
+\path (adj) ++(-0.8,1) coordinate (b);
+\draw (start.30) to[out=45,in=180] (a);
+\draw[->-] (a) -- (b);
+\draw (b) to[out=0,in=135] (adj.90);
+
+\path (start) ++(1.5,1.5) coordinate (c);
+\path (noun) ++(-1.3,1.5) coordinate (d);
+\draw (start.120) to[out=45,in=180] (c);
+\draw[->-] (c) -- (d);
+\draw (d) to[out=0,in=135] (noun.90);
+
+\draw (adj.-40)++(0,\pgflinewidth/2) arc (90:-90:0.25) coordinate (e);
+\draw (adj.-140)++(0,\pgflinewidth/2) arc (90:270:0.25) coordinate (f);
+\draw[->-] (e) -- (f);
+
+\end{tikzpicture}%
+\end{document}
