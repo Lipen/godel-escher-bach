@@ -1,13 +1,14 @@
 \documentclass[../main.tex]{subfiles}
 \enabletikzpreview%
 \begin{document}%
+% This diagram is being used in Chapter 5.
 \begin{tikzpicture}[
     thick,
     font=\bfseries,
     ->-/.style={
         decoration={
             markings,
-            mark=at position 0.5 with {\arrow{Stealth[scale=1.5]}}
+            mark=at position 0.55 with {\arrow{Stealth[scale=1.5]}}
         },
         postaction={decorate},
     },
@@ -46,7 +47,7 @@
 \draw (reptiles-1) -- node[below,align=center]{Рептилии} (descent);
 \draw[->-] (descent) -- node[sloped,above,align=center,text width=\myY]{\emph{Спускаются на один этаж}} (labyrinth);
 \draw (labyrinth) -- node[below,align=center]{Маленький гармонический \\ лабиринт злобного Мажотавра} (pop);
-\draw[->-] (pop) -- node[sloped,above,align=center,text width=\myY]{\emph{Пьют вытал\-кивающую настойку}} (reptiles-2);
+\draw[->-] (pop) -- node[sloped,above,align=center,text width=\myY]{\emph{Пьют выталки\-вающую настойку}} (reptiles-2);
 \draw (reptiles-2) -- node[below,align=center]{Рептилии} (move);
 \draw[->-] (move) -- node[sloped,above,align=center,text width=\myY]{\emph{Движутся пер\-пендикулярно к картине}} (tortille);
 \draw (tortille) -- node[below,align=center]{Дом Черепахи} (end);
