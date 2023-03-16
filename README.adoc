@@ -30,7 +30,7 @@ NOTE: You may want to use `git lfs pull` (see link:https://git-lfs.github.com[Gi
 +
 [source]
 ----
-latexmk -pdflatex main
+latexmk -pdf main.tex
 ----
 
 * ...or use link:https://tectonic-typesetting.github.io[Tectonic]:
