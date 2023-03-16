@@ -1,0 +1,35 @@
+name: Build
+run-name: Render PDF by @${{ github.actor }}
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: nschloe/action-cached-lfs-checkout@v1
+
+      - name: Build LaTeX project and generate PDFs
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: main.tex
+
+      - name: Upload PDF as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: PDF
+          path: main.pdf
+
+      - name: Prepare files for gh-pages
+        run: |
+          mkdir -p out
+          mv main.pdf out/
+
+      - name: Publish PDFs to gh-pages branch
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          personal_token: ${{ secrets.PERSONAL_TOKEN }}
+          publish_dir: out/
+          publish_branch: gh-pages
