@@ -9,6 +9,8 @@ ifdef::env-github[]
 :warning-caption: :warning:
 endif::[]
 
+image:https://github.com/Lipen/godel-escher-bach/actions/workflows/build.yml/badge.svg?branch=master["Build",link="https://github.com/Lipen/godel-escher-bach/actions/workflows/build.yml"]
+
 :fn-rus: footnote:[Д.Р. Хофштадтер "Гёдель, Эшер, Бах: эта бесконечная гирлянда".]
 > This repository contains a $\TeX$ reproduction of the Russian translation{fn-rus} of the link:https://en.wikipedia.org/wiki/Godel,_Escher,_Bach[book] "Gödel, Escher, Bach: An Eternal Golden Braid" by link:https://en.wikipedia.org/wiki/Douglas_Hofstadter[Douglas Hofstadter].
 
