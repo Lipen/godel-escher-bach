@@ -10,9 +10,11 @@ ifdef::env-github[]
 endif::[]
 
 image:https://github.com/Lipen/godel-escher-bach/actions/workflows/build.yml/badge.svg?branch=master["Build",link="https://github.com/Lipen/godel-escher-bach/actions/workflows/build.yml"]
+image:https://img.shields.io/badge/PDF-preview-blue?style=social&logo=gitbook["PDF",link="https://lipen.github.io/godel-escher-bach/main.pdf"]
 
 :fn-rus: footnote:[Д.Р. Хофштадтер "Гёдель, Эшер, Бах: эта бесконечная гирлянда".]
 > This repository contains a $\TeX$ reproduction of the Russian translation{fn-rus} of the link:https://en.wikipedia.org/wiki/Godel,_Escher,_Bach[book] "Gödel, Escher, Bach: An Eternal Golden Braid" by link:https://en.wikipedia.org/wiki/Douglas_Hofstadter[Douglas Hofstadter].
+
 
 == Download
 
@@ -24,23 +26,25 @@ cd godel-escher-bach
 
 NOTE: You may want to use `git lfs pull` (see link:https://git-lfs.github.com[Git LFS]) in order to download all images (and probably other large files). However, modern Git should automatically do this for you (while `git clone`), so you don't have to.
 
+
 == Build
 
-* link:https://texlive2020.latexonline.cc/compile?git=https://github.com/Lipen/godel-escher-bach&target=main.tex&command=pdflatex[Render online]
+To compile the PDF from the source code, you have two options:
 
-* ...or use link:https://personal.psu.edu/~jcc8/software/latexmk[latexmk] (see link:https://mg.readthedocs.io/latexmk.html[tutorial]):
+1. Using link:https://mg.readthedocs.io/latexmk.html[Latexmk] (a Perl script for running LaTeX the correct number of times to resolve cross-references, etc.):
 +
 [source]
 ----
 latexmk -pdf main.tex
 ----
 
-* ...or use link:https://tectonic-typesetting.github.io[Tectonic]:
+2. Using link:https://tectonic-typesetting.github.io[Tectonic] (a modernized, complete, self-contained TeX/LaTeX engine):
 +
 [source]
 ----
 tectonic main.tex
 ----
+
 
 == Work in progress
 
@@ -60,6 +64,7 @@ See link:CONTRIBUTING.md[] if you wanna help!
 - [x] Add glossary
 - [ ] Add bibliography
 - [ ] Create fancy page design
+
 
 == Credits
 
